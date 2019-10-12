@@ -13,6 +13,7 @@ int			ft_printf(const char *format, ...)
 	list.format = (char *)format;
 	init_struct_functions(&list);
 	init_display_functions(&list);
+	list.count = 0;
 	while (list.format[list.i] != '\0')
 	{
 		if (list.format[list.i] == '%')
@@ -33,11 +34,11 @@ int			ft_printf(const char *format, ...)
 			if ((j = is_conversion(list)) > -1)
 				list.display[j](&list);
 		}
-//		else
-//		{
-//			list.count++;
-//			ft_putchar(list.format[list.i]);
-//		}
+		else
+		{
+			list.count++;
+			ft_putchar(list.format[list.i]);
+		}
 		list.i++;
 	}
 	return (list.count);

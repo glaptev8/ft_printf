@@ -9,6 +9,7 @@
 typedef struct 	s_printf
 {
 	va_list		argc;
+	int			number;
 	char		*format;
 	void		(*add_functions[11])(struct s_printf *);
 	void		(*display[11])(struct s_printf *);
@@ -61,4 +62,7 @@ void		add_l(t_printf *list);
 void		add_ll(t_printf *list);
 void		add_h(t_printf *list);
 void		add_hh(t_printf *list);
+intmax_t	get_number_for_d(t_printf *list);
+void		ft_putnbrmax(intmax_t n, t_printf *l);
+int			get_number_len(intmax_t n, t_printf list);
 #endif

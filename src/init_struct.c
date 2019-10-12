@@ -9,9 +9,11 @@ void	init_struct(t_printf *l)
 	l->precision = 0;
 	l->width = 0;
 	l->zero = 0;
+	l->number = 0;
 	l->zero_space = 0;
 	l->minus_space = 0;
 	l->width_space = 0;
+	l->precision_space = -1;
 	l->l = 0;
 	l->ll = 0;
 	l->h = 0;

@@ -2,7 +2,16 @@
 
 int		main(void)
 {
-	ft_printf("% sdfs  %-59s %+d %14c %#d %.8d  %#X %lx %llx %  hho ");
+	ft_printf("%0+5d\n", 42);
+	printf("%0+5d", 42);
+//	ft_printf("%0+5d\n", 42);
+//	printf("%0+5d", 42);
+//	   printf("% d\n", ft_printf("%.d, %.0d", 0, 0));
+//	   printf("% d\n", printf("%.d, %.0d", 0, 0));
+//	ft_printf("%*d", 5, 12345);
+//	printf("%40-30#+d", -42);
+//	ft_printf("%lld\n", -LLONG_MAX);
+//	   printf("%lld", -LLONG_MAX);
 //	printf("% sdfs", "gleb");
 	return (0);
 }
@@ -131,3 +140,5 @@ int		main(void)
 //re: fclean all
 //
 //.PHONY: all clean flcean re
+
+
