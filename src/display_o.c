@@ -2,5 +2,5 @@
 
 void	display_o(t_printf *list)
 {
-
+	printf("o\n");
 }

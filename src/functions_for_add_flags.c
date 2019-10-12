@@ -32,15 +32,19 @@ void	add_plus(t_printf *list)
 
 void	add_space(t_printf *list)
 {
-	printf("s\n");
-	list->space = 0;
+	list->space = 1;
+	if (list->format[list->i + 1] == ' ')
+	{
+		while (list->format[list->i] == ' ')
+			list->i++;
+		list->i--;
+	}
 }
 
 void	add_precision(t_printf *list)
 {
 	char *num;
 
-	printf("P\n");
 	list->precision = 1;
 	if (ft_isdigit(list->format[list->i + 1]))
 	{
@@ -58,7 +62,6 @@ void	add_width(t_printf *list)
 {
 	char *num;
 
-	printf("W\n");
 	list->width = 1;
 	if (ft_isdigit(list->format[list->i + 1]))
 	{
@@ -76,7 +79,6 @@ void	add_zero(t_printf *list)
 {
 	char *num;
 
-	printf("0\n");
 	list->zero = 1;
 	if (ft_isdigit(list->format[list->i + 1]))
 	{

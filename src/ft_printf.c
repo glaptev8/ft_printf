@@ -23,7 +23,11 @@ int			ft_printf(const char *format, ...)
 			while ((is_conversion(list) == -1) && (list.format[list.i] != '\0'))
 			{
 				if ((j = is_flag(list)) != -1)
+				{
+					if (list.format[list.i + 1] == 'l' || list.format[list.i + 1] == 'h')
+						list.i++;
 					list.add_functions[j](&list);
+				}
 				list.i++;
 			}
 			if ((j = is_conversion(list)) > -1)

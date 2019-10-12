@@ -2,7 +2,7 @@
 
 int		main(void)
 {
-	ft_printf("% sdfs  %-59s %+d %14c %#d %.8d");
+	ft_printf("% sdfs  %-59s %+d %14c %#d %.8d  %#X %lx %llx %  hho ");
 //	printf("% sdfs", "gleb");
 	return (0);
 }

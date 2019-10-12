@@ -10,8 +10,8 @@ typedef struct 	s_printf
 {
 	va_list		argc;
 	char		*format;
-	void		(*add_functions[10])(struct s_printf *);
-	void		(*display[10])(struct s_printf *);
+	void		(*add_functions[11])(struct s_printf *);
+	void		(*display[11])(struct s_printf *);
 	short		zero;
 	int			zero_space;
 	short		sharp;
@@ -52,4 +52,13 @@ void		display_d(t_printf *list);
 void		display_c(t_printf *list);
 void		init_display_functions(t_printf *l);
 void		add_zero(t_printf *list);
+void		display_X(t_printf *list);
+void		display_x(t_printf *list);
+void		display_X(t_printf *list);
+void		display_f(t_printf *list);
+void		display_procent(t_printf *list);
+void		add_l(t_printf *list);
+void		add_ll(t_printf *list);
+void		add_h(t_printf *list);
+void		add_hh(t_printf *list);
 #endif
