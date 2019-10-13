@@ -24,7 +24,11 @@ CFILE = display_procent.c \
 		ft_printf.c \
 		functions_for_add_flags.c \
 		functions_for_add_flags2.c \
-		init_struct.c is_conversion.c
+		init_struct.c is_conversion.c \
+		init_displays.c \
+		ft_putnbrmax.c \
+		ft_numberlen.c \
+		displays_for_d.c
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

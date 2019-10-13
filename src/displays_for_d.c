@@ -38,7 +38,7 @@ void	display_width_d(t_printf *list, int len)
 	}
 }
 
-void	list_plus_d(t_printf *list, intmax_t *n)
+void	display_plus_d(t_printf *list, intmax_t *n)
 {
 	list->count++;
 	*n < 0 ? ft_putchar('-') : ft_putchar('+');

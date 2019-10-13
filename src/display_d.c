@@ -33,7 +33,7 @@ void		display_d(t_printf *list)
 	else if (list->width == 1)
 		display_width_d(list, len);
 	if (list->plus == 1 && list->zero == 0)
-		list_plus_d(list, &n);
+		display_plus_d(list, &n);
 	if (list->precision == 1)
 		display_precision_d(list, &n, len_num);
 	if (list->minus == 1)
