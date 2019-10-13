@@ -15,7 +15,7 @@ void	add_minus(t_printf *list)
 		list->i++;
 		num = list->format;
 		num += list->i;
-		list->minus_space = ft_atoi(num);
+		list->width_space = ft_atoi(num);
 		while (ft_isdigit(list->format[list->i]))
 			list->i++;
 		list->i--;
@@ -66,8 +66,8 @@ void	add_width(t_printf *list)
 {
 	char *num;
 	list->width = 1;
-	if (list->zero == 1)
-		return;
+//	if (list->zero == 1)
+//		return;
 	if (list->format[list->i] == '*')
 	{
 		list->width_space = va_arg(list->argc, int);
@@ -101,7 +101,7 @@ void	add_zero(t_printf *list)
 		list->i++;
 		num = list->format;
 		num += list->i;
-		list->zero_space = ft_atoi(num);
+		list->width_space = ft_atoi(num);
 		while (ft_isdigit(list->format[list->i]))
 			list->i++;
 		list->i--;

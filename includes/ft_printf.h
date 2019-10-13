@@ -65,5 +65,4 @@ void		add_hh(t_printf *list);
 intmax_t	get_number_for_d(t_printf *list);
 void		ft_putnbrmax(intmax_t n, t_printf *l);
 int			get_number_len(intmax_t n, t_printf list);
-int			initialze_display_d(t_printf *l, intmax_t *n, int *len_num);
 #endif
