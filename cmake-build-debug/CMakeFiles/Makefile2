@@ -65,39 +65,39 @@ CMAKE_SOURCE_DIR = /Users/tmelia/Desktop/normprintf
 CMAKE_BINARY_DIR = /Users/tmelia/Desktop/normprintf/cmake-build-debug
 
 #=============================================================================
-# Target rules for target CMakeFiles/main.c.dir
+# Target rules for target CMakeFiles/normprintf.dir
 
 # All Build rule for target.
-CMakeFiles/main.c.dir/all:
-	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/depend
-	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tmelia/Desktop/normprintf/cmake-build-debug/CMakeFiles --progress-num= "Built target main.c"
-.PHONY : CMakeFiles/main.c.dir/all
+CMakeFiles/normprintf.dir/all:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/depend
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/tmelia/Desktop/normprintf/cmake-build-debug/CMakeFiles --progress-num=1,2 "Built target normprintf"
+.PHONY : CMakeFiles/normprintf.dir/all
 
 # Include target in all.
-all: CMakeFiles/main.c.dir/all
+all: CMakeFiles/normprintf.dir/all
 
 .PHONY : all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/main.c.dir/rule: cmake_check_build_system
+CMakeFiles/normprintf.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tmelia/Desktop/normprintf/cmake-build-debug/CMakeFiles 2
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/normprintf.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tmelia/Desktop/normprintf/cmake-build-debug/CMakeFiles 0
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/main.c.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/tmelia/Desktop/normprintf/cmake-build-debug/CMakeFiles 0
-.PHONY : CMakeFiles/main.c.dir/rule
+.PHONY : CMakeFiles/normprintf.dir/rule
 
 # Convenience name for target.
-main.c: CMakeFiles/main.c.dir/rule
+normprintf: CMakeFiles/normprintf.dir/rule
 
-.PHONY : main.c
-
-# clean rule for target.
-CMakeFiles/main.c.dir/clean:
-	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/clean
-.PHONY : CMakeFiles/main.c.dir/clean
+.PHONY : normprintf
 
 # clean rule for target.
-clean: CMakeFiles/main.c.dir/clean
+CMakeFiles/normprintf.dir/clean:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/clean
+.PHONY : CMakeFiles/normprintf.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/normprintf.dir/clean
 
 .PHONY : clean
 

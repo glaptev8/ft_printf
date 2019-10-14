@@ -76,6 +76,14 @@ void		display_width_d(t_printf *list, int len);
 void		list_plus_d(t_printf *list, intmax_t *n);
 void		display_precision_d(t_printf *list, intmax_t *n, int len_num);
 void		display_minus_d(t_printf *list, intmax_t n,int len);
-int			converter(uintmax_t n, int base);
+uintmax_t	converter(uintmax_t n, int base);
 uintmax_t	get_number_for_o(t_printf *list);
+void	ft_putnbrmax_o(uintmax_t n, t_printf *l);
+void	display_space_o(t_printf *list, int *len);
+void	display_zero_o(t_printf *list, int *len);
+void	display_width_o(t_printf *list, int len);
+void	display_precision_o(t_printf *list,int len_num);
+void	display_sharp_o(t_printf *list);
+void	display_minus_o(t_printf *list, uintmax_t n, int len);
+int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num);
 #endif

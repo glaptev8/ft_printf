@@ -37,14 +37,13 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="main.c">
-				<Option output="/Users/tmelia/Desktop/normprintf/cmake-build-debug/main.c" prefix_auto="0" extension_auto="0"/>
+			<Target title="normprintf">
+				<Option output="/Users/tmelia/Desktop/normprintf/cmake-build-debug/normprintf" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/tmelia/Desktop/normprintf/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -53,20 +52,19 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.c"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 normprintf"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
-			<Target title="main.c/fast">
-				<Option output="/Users/tmelia/Desktop/normprintf/cmake-build-debug/main.c" prefix_auto="0" extension_auto="0"/>
+			<Target title="normprintf/fast">
+				<Option output="/Users/tmelia/Desktop/normprintf/cmake-build-debug/normprintf" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/Users/tmelia/Desktop/normprintf/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
 					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
@@ -75,15 +73,15 @@
 					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 main.c/fast"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 normprintf/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/tmelia/Desktop/normprintf/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/tmelia/Desktop/normprintf/libftprintf.a">
-			<Option target="main.c"/>
+		<Unit filename="/Users/tmelia/Desktop/normprintf/main.c">
+			<Option target="normprintf"/>
 		</Unit>
 		<Unit filename="/Users/tmelia/Desktop/normprintf/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>

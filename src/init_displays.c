@@ -27,8 +27,7 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	int len;
 
 	*n = get_number_for_o(list);
-
-	*n = converter(*n, 8);
+	*n = converter(*n,8);
 	list->number_o = *n;
 	len = get_number_len(*n, *list);
 	*len_num = len;
@@ -45,8 +44,6 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	{
 		if (list->is_o == 1)
 			len++;
-		else if (list->is_0x == 1)
-			len += 2;
 	}
 	return (len);
 }

@@ -1,0 +1,32 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/tmelia/Desktop/normprintf/includes/ft_printf.h
+../libft/libft.h
+/Users/tmelia/Desktop/normprintf/libft/libft.h
+stdarg.h
+-
+stdlib.h
+-
+limits.h
+-
+
+/Users/tmelia/Desktop/normprintf/libft/libft.h
+string.h
+-
+stdlib.h
+-
+stdio.h
+-
+unistd.h
+-
+
+/Users/tmelia/Desktop/normprintf/main.c
+includes/ft_printf.h
+/Users/tmelia/Desktop/normprintf/includes/ft_printf.h
+

@@ -111,17 +111,44 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named main.c
+# Target rules for targets named normprintf
 
 # Build rule for target.
-main.c: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 main.c
-.PHONY : main.c
+normprintf: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 normprintf
+.PHONY : normprintf
 
 # fast build rule for target.
-main.c/fast:
-	$(MAKE) -f CMakeFiles/main.c.dir/build.make CMakeFiles/main.c.dir/build
-.PHONY : main.c/fast
+normprintf/fast:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/build
+.PHONY : normprintf/fast
+
+main.o: main.c.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.c.o:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/main.c.o
+.PHONY : main.c.o
+
+main.i: main.c.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.c.i:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/main.c.i
+.PHONY : main.c.i
+
+main.s: main.c.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.c.s:
+	$(MAKE) -f CMakeFiles/normprintf.dir/build.make CMakeFiles/normprintf.dir/main.c.s
+.PHONY : main.c.s
 
 # Help Target
 help:
@@ -131,7 +158,10 @@ help:
 	@echo "... depend"
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
-	@echo "... main.c"
+	@echo "... normprintf"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

@@ -1,6 +1,6 @@
 #include "../includes/ft_printf.h"
 
-int		converter(uintmax_t n, int base)
+uintmax_t		converter(uintmax_t n, int base)
 {
 	uintmax_t nb;
 
