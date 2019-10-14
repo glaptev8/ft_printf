@@ -2,8 +2,8 @@
 
 int		main(void)
 {
-	ft_printf("%0+5d\n", 42);
-	printf("%0+5d", 42);
+	ft_printf("%o\n", -40);
+	printf("%o", -40);
 //	ft_printf("%0+5d\n", 42);
 //	printf("%0+5d", 42);
 //	   printf("% d\n", ft_printf("%.d, %.0d", 0, 0));

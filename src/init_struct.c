@@ -4,6 +4,7 @@ void	init_struct(t_printf *l)
 {
 	l->minus = 0;
 	l->plus = 0;
+	l->is_number = 0;
 	l->sharp = 0;
 	l->space = 0;
 	l->precision = 0;
@@ -18,6 +19,9 @@ void	init_struct(t_printf *l)
 	l->ll = 0;
 	l->h = 0;
 	l->hh = 0;
+	l->is_o = 0;
+	l->is_0x = 0;
+	l->number_o = 0;
 }
 
 void	init_struct_functions(t_printf *l)

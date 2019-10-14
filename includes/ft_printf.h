@@ -9,7 +9,8 @@
 typedef struct 	s_printf
 {
 	va_list		argc;
-	int			number;
+	intmax_t			number;
+	int			is_number;
 	char		*format;
 	void		(*add_functions[11])(struct s_printf *);
 	void		(*display[11])(struct s_printf *);
@@ -30,6 +31,9 @@ typedef struct 	s_printf
 	int 		h;
 	int 		hh;
 	int			i;
+	int			is_o;
+	int			is_0x;
+	int			number_o;
 }				t_printf;
 
 int			ft_printf(const char *format, ...);
@@ -72,4 +76,6 @@ void		display_width_d(t_printf *list, int len);
 void		list_plus_d(t_printf *list, intmax_t *n);
 void		display_precision_d(t_printf *list, intmax_t *n, int len_num);
 void		display_minus_d(t_printf *list, intmax_t n,int len);
+int			converter(uintmax_t n, int base);
+uintmax_t	get_number_for_o(t_printf *list);
 #endif
