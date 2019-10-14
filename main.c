@@ -2,8 +2,9 @@
 
 int		main(void)
 {
-	ft_printf("%.15*100d_!\n", 1,42);
-	printf("%.15*100d_!", 1,42);
+	ft_printf("111%s333%s555\n", "222", "444");
+	printf("111%s333%s555\n", "222", "444");
+//	ft_printf("%c", '}');
 //	ft_printf("%0+5d\n", 42);
 //	printf("%0+5d", 42);
 //	   printf("% d\n", ft_printf("%.d, %.0d", 0, 0));
