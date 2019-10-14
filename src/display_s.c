@@ -1,30 +1,55 @@
 #include "../includes/ft_printf.h"
 
+void		ft_putstr_cool(char *str, long int len, t_printf *list)
+{
+	if (str == NULL)
+		ft_putstr_cool("(null)", len, list);
+	else
+	{
+		if (!str[1] && (str[0] == ' ' || str[0] == '0'))
+		{
+			while (len-- > 0)
+			{
+				write(1, str, 1);
+				list->count++;
+			}
+		}
+		else
+		{
+			while (len-- > 0)
+			{
+				write(1, str++, 1);
+				list->count++;
+			}
+		}
+	}
+}
+
 void	display_s(t_printf *list)
 {
 	char	*str;
 	size_t	len;
 
-	str = va_arg(list->argc, char*);
-	len = ft_strlen(str);
+	if (!(str = va_arg(list->argc, char*)))
+		str = NULL;
+	len = 6;
+	if (str)
+		len = ft_strlen(str);
+	if (list->precision >= 0 && list->precision_space < len)
+		len = list->precision_space;
 	if (list->minus == 1)
 	{
-		ft_putstr(str);
-//		printf("%zu _ len\n", len);
-//		printf("%d _ width\n", list->width_space);
-		while (list->width_space-- > len)
-			ft_putchar(' ');
+		ft_putstr_cool(str, len, list);
+		ft_putstr_cool(" ", list->width_space - len, list);
 	}
 	else if (list->zero == 1)
 	{
-		while (list->width_space-- > len)
-			ft_putchar('0');
-		ft_putstr(str);
+		ft_putstr_cool("0", list->width_space - len, list);
+		ft_putstr_cool(str, len, list);
 	}
 	else
 	{
-		while (list->width_space-- > len)
-			ft_putchar(' ');
-		ft_putstr(str);
+		ft_putstr_cool(" ", list->width_space - len, list);
+		ft_putstr_cool(str, len, list);
 	}
 }

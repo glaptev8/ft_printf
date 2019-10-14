@@ -5,6 +5,8 @@ void	display_c(t_printf *list)
 	char	sym;
 
 	sym = va_arg(list->argc, int);
+	if (list->width_space > 0)
+		list->count += list->width_space - 1;
 	if (list->minus == 1)
 	{
 		ft_putchar(sym);
@@ -23,4 +25,5 @@ void	display_c(t_printf *list)
 			ft_putchar(' ');
 		ft_putchar(sym);
 	}
+	list->count++;
 }
