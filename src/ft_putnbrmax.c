@@ -24,3 +24,14 @@ void	ft_putnbrmax(intmax_t n, t_printf *l)
 		}
 	}
 }
+
+void	ft_putnbrmax_o(intmax_t n, t_printf *l)
+{
+	if (n > 9)
+		ft_putnbrmax_o(n / 10, l);
+	if (!(l->precision == 1 && l->number_o == 0))
+	{
+		l->count++;
+		ft_putchar((n % 10) + '0');
+	}
+}
