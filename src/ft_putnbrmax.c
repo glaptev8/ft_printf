@@ -2,12 +2,8 @@
 
 void	ft_putnbrmax(intmax_t n, t_printf *l)
 {
-	if (l->u == 1 && n == (uintmax_t)18446744073709551613 + 2)
-	{
-		l->count += 20;
-		write(1, "18446744073709551615", 20);
-	}
-	else if (n == -9223372036854775807 - 1)
+
+	if (n == -9223372036854775807 - 1)
 	{
 		l->count += 20;
 		write(1, "-9223372036854775808", 20);
@@ -45,13 +41,20 @@ int		ft_str_equally(char *str1, char *str2)
 	return (1);
 }
 
-void	ft_putnbrmax_o(intmax_t n, t_printf *l)
+void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 {
-
-	if (n > 9)
-			ft_putnbrmax_o(n / 10, l);
+	if (l->u == 1 && get_number_len_for_uint(n) >= 20)
+	{
+		l->count += 20;
+		write(1, "18446744073709551615", 20);
+	}
+	else if (n > 9)
+		ft_putnbrmax_o(n / 10, l);
+	if (!(l->u == 1 && get_number_len_for_uint(n) >= 20))
+	{
 		l->count++;
 		ft_putchar((n % 10) + '0');
+	}
 }
 
 void	ft_putnbrmax_x(char *n)

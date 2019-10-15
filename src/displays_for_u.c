@@ -1,13 +1,13 @@
 #include "../includes/ft_printf.h"
 
-void	display_space_d(t_printf *list, int *len)
+void	display_space_u(t_printf *list, int *len)
 {
 	(*len)++;
 	list->count++;
 	ft_putchar(' ');
 }
 
-void	display_zero_d(t_printf *list, int *len, intmax_t *n)
+void	display_zero_u(t_printf *list, int *len, uintmax_t *n)
 {
 	int		i;
 
@@ -26,7 +26,7 @@ void	display_zero_d(t_printf *list, int *len, intmax_t *n)
 	}
 }
 
-void	display_width_d(t_printf *list, int len)
+void	display_width_u(t_printf *list, int len)
 {
 	int		i;
 
@@ -38,14 +38,14 @@ void	display_width_d(t_printf *list, int len)
 	}
 }
 
-void	display_plus_d(t_printf *list, intmax_t *n)
+void	display_plus_u(t_printf *list, uintmax_t *n)
 {
 	list->count++;
 	*n < 0 ? ft_putchar('-') : ft_putchar('+');
 	*n < 0 ? *n *= (-1) : 0;
 }
 
-void	display_precision_d(t_printf *list, intmax_t *n, int len_num)
+void	display_precision_u(t_printf *list, uintmax_t *n, int len_num)
 {
 	int i;
 
@@ -64,7 +64,7 @@ void	display_precision_d(t_printf *list, intmax_t *n, int len_num)
 	}
 }
 
-void	display_minus_d(t_printf *list, intmax_t n, int len)
+void	display_minus_u(t_printf *list, uintmax_t n, int len)
 {
 	int i;
 
