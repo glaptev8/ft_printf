@@ -67,7 +67,7 @@ void					display_p(t_printf *list)
 
 	adres = va_arg(list->argc, unsigned long int);
 	str_a = ft_str_adres(adres);
-	len = ft_strlen(str_a);
+	len = (list->precision == 1 && adres == 0) ? 0 : ft_strlen(str_a);
 	if (list->precision_space > 0)
 		list->zero = 0;
 	if (list->precision_space < len)

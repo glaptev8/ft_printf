@@ -9,8 +9,8 @@ int			main(void)
 
 	b = 100;
 	c = &b;
-	printf("%.15p!\n", 4503599627370495);
-	ft_printf("%.15p!\n", 4503599627370495);
+	printf("%10.p, %-10.p!n\n", 0, 0);
+	ft_printf("%10.p, %-10.p!m\n", 0, 0);
 	a = 100;
 //	i = (long unsigned int)c;
 //	ft_printf("%\n", "test");
