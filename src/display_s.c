@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_s.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: cjosue <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/15 19:03:52 by cjosue            #+#    #+#             */
+/*   Updated: 2019/10/15 19:03:54 by cjosue           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
-void		ft_putstr_cool(char *str, long int len, t_printf *list)
+void			ft_putstr_cool(char *str, long int len, t_printf *list)
 {
 	if (str == NULL)
 		ft_putstr_cool("(null)", len, list);
@@ -25,18 +37,18 @@ void		ft_putstr_cool(char *str, long int len, t_printf *list)
 	}
 }
 
-void	display_s(t_printf *list)
+void			display_s(t_printf *list)
 {
-	char	*str;
-	size_t	len;
+	char		*str;
+	long int	len;
 
 	if (!(str = va_arg(list->argc, char*)))
 		str = NULL;
 	len = 6;
 	if (str)
 		len = ft_strlen(str);
-	if (list->precision >= 0 && list->precision_space < len)
-		len = list->precision_space;
+	if (list->precision > 0 && list->precision_space < len)
+		len = (list->precision_space >= 0) ? list->precision_space : 0;
 	if (list->minus == 1)
 	{
 		ft_putstr_cool(str, len, list);

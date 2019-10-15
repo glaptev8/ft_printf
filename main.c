@@ -1,10 +1,20 @@
 #include "includes/ft_printf.h"
 
-int		main(void)
+int			main(void)
 {
-	int		i;
+	long unsigned int	i;
+	long unsigned int	a;
+	char				*c;
+	char				b;
 
-	ft_printf("%\n", "test");
+	b = 100;
+	c = &b;
+	printf("%.15p!\n", 4503599627370495);
+	ft_printf("%.15p!\n", 4503599627370495);
+	a = 100;
+//	i = (long unsigned int)c;
+//	ft_printf("%\n", "test");
+//	printf("%.30p__i\n", i);
 //	printf("% /n", "test");
 	//	ft_printf("%c", '}');
 //	ft_printf("%0+5d\n", 42);
