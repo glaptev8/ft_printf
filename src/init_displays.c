@@ -31,7 +31,7 @@ int		initialze_display_u(t_printf *list, uintmax_t *n, int *len_num)
 	list->plus = 0;
 	list->u = 1;
 	list->number = *n;
-	len = get_number_len(*n, *list);
+	len = get_number_len_for_uint(*n);
 	*len_num = len;
 	if (list->precision == 1 || list->minus == 1)
 	{
@@ -55,7 +55,7 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	list->is_o = 1;
 	*n = converter(*n, 8);
 	list->number_o = *n;
-	len = get_number_len(*n, *list);
+	len = get_number_len_for_uint(*n);
 	*len_num = len;
 	if (list->precision == 1 || list->minus == 1)
 	{

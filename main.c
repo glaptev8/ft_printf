@@ -2,8 +2,8 @@
 
 int		main(void)
 {
-	printf("%d\n", ft_printf("%lu1\n", -42));
-	printf("%d\n",    printf("%lu1\n", -42));
+	printf("%d\n", ft_printf("%lo\n",ULONG_MAX));
+	printf("%d\n", printf("%lo\n",ULONG_MAX));
 	return (0);
 }
 

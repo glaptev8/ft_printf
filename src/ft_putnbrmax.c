@@ -48,12 +48,20 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 		l->count += 20;
 		write(1, "18446744073709551615", 20);
 	}
-	else if (n > 9)
-		ft_putnbrmax_o(n / 10, l);
-	if (!(l->u == 1 && get_number_len_for_uint(n) >= 20))
+	else if (l->is_o == 1 && get_number_len_for_uint(n) >= 19)
 	{
-		l->count++;
-		ft_putchar((n % 10) + '0');
+			l->count += 22;
+			write(1, "1777777777777777777777", 22);
+	}
+	else
+	{
+		if (n > 9)
+			ft_putnbrmax_o(n / 10, l);
+		if (!(l->u == 1 && get_number_len_for_uint(n) >= 20))
+		{
+			l->count++;
+			ft_putchar((n % 10) + '0');
+		}
 	}
 }
 

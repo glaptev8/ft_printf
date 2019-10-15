@@ -101,5 +101,6 @@ void	display_width_u(t_printf *list, int len);
 void	display_zero_u(t_printf *list, int *len, uintmax_t *n);
 void	display_space_u(t_printf *list, int *len);
 int		get_number_len_for_uint(uintmax_t n);
+void			ft_putstr_cool(char *str, long int len, t_printf *list);
 int		initialze_display_u(t_printf *list, uintmax_t *n, int *len_num);
 #endif

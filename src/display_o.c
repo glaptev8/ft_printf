@@ -9,7 +9,7 @@ uintmax_t	get_number_for_o(t_printf *list)
 	else if (list->ll == 1)
 		n = va_arg(list->argc, unsigned long long int);
 	else if (list->h == 1)
-		n = (unsigned short)va_arg(list->argc,unsigned int);
+		n = (unsigned short)va_arg(list->argc, unsigned int);
 	else if (list->hh == 1)
 		n = (unsigned char)va_arg(list->argc,unsigned int);
 	else
