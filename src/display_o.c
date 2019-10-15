@@ -39,6 +39,8 @@ void	display_o(t_printf *list)
 		display_sharp_o(list, len);
 	if (list->minus == 1)
 		display_minus_o(list, len);
-	else if (!(list->precision_space <= 0 && n == 0 && list->precision == 1))
+	else if (!(list->precision_space <= 0 && n == 0))
+		ft_putnbrmax_o(n, list);
+	else if (list->sharp != 1 && n == 0 && list->precision != 1)
 		ft_putnbrmax_o(n, list);
 }

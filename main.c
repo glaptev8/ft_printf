@@ -2,8 +2,11 @@
 
 int		main(void)
 {
-	ft_printf("%-5.10o\n", 2500);
-	printf("%-5.10o", 2500);
+	printf("(%d)\n", ft_printf("%llu, %llu\n", 0llu, ULLONG_MAX));
+	printf("(%d)\n", printf("%llu, %llu\n", 0llu, ULLONG_MAX));
+//	printf("(%d)\n", ft_printf("%lu", -42));
+//	printf("(%d)\n", printf("%lu", -42));
+//	printf("%x", 15);
 //	ft_printf("%0+5d\n", 42);
 //	printf("%0+5d", 42);
 //	   printf("% d\n", ft_printf("%.d, %.0d", 0, 0));

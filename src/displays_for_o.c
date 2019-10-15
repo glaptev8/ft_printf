@@ -11,6 +11,11 @@ void	display_zero_o(t_printf *list, int *len)
 {
 	int		i;
 
+	if ((list->is_0x == 1 || list->is_o == 1) && list->sharp == 1)
+	{
+		display_sharp_o(list, *len);
+		list->sharp = 0;
+	}
 	i = list->width_space;
 	while (i-- > *len)
 	{
@@ -38,6 +43,12 @@ void	display_sharp_o(t_printf *list, int len)
 		len++;
 		list->count++;
 		ft_putchar('0');
+	}
+	else if (list->is_0x && list->number_o != 0)
+	{
+		len++;
+		list->count += 2;
+		list->X == 1 ? ft_putstr("0X") : ft_putstr("0x");
 	}
 }
 

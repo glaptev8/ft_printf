@@ -10,6 +10,7 @@ typedef struct 	s_printf
 {
 	va_list		argc;
 	intmax_t			number;
+	uintmax_t	number_x;
 	int			is_number;
 	char		*format;
 	void		(*add_functions[11])(struct s_printf *);
@@ -33,7 +34,9 @@ typedef struct 	s_printf
 	int			i;
 	int			is_o;
 	int			is_0x;
-	int			number_o;
+	int 		X;
+	int			u;
+	uintmax_t			number_o;
 }				t_printf;
 
 int			ft_printf(const char *format, ...);
@@ -57,9 +60,8 @@ void		display_d(t_printf *list);
 void		display_c(t_printf *list);
 void		init_display_functions(t_printf *l);
 void		add_zero(t_printf *list);
-void		display_X(t_printf *list);
+void		display_xx(t_printf *list);
 void		display_x(t_printf *list);
-void		display_X(t_printf *list);
 void		display_f(t_printf *list);
 void		display_procent(t_printf *list);
 void		add_l(t_printf *list);
@@ -85,5 +87,11 @@ void		display_minus_o(t_printf *list, int len);
 void	ft_putnbrmax_o(intmax_t n, t_printf *l);
 uintmax_t			converter(uintmax_t n, int base);
 int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num);
+char			*converter_16(uintmax_t n, t_printf *list);
 uintmax_t	get_number_for_o(t_printf *list);
+int		initialze_display_x(t_printf *list, char *n, int *len_num);
+int		get_number_len_for_16(uintmax_t n);
+void	display_sharp_o(t_printf *list, int len);
+void	display_minus_x(t_printf *list, int len, int len_num, char *n);
+void	ft_putnbrmax_x(char *n);
 #endif

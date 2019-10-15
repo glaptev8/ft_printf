@@ -15,3 +15,16 @@ int		get_number_len(intmax_t n, t_printf list)
 	}
 	return (i);
 }
+
+int		get_number_len_for_16(uintmax_t n)
+{
+	int i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 16;
+		i++;
+	}
+	return (i);
+}
