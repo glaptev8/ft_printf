@@ -47,10 +47,9 @@ int		initialze_display_f(t_printf *list, double n,int *len_num)
 	list->integer /= p;
 	len = get_number_len(list->integer, *list) + get_number_len_for_uint(list->decimal);
 	d_len = ft_pow(10, (get_number_len((uintmax_t)list->decimal, *list) - list->precision_space) -1);
-
 	len++;
 	*len_num = len;
-	if (list->precision == 1 || list->minus == 1)
+	if (list->minus == 1)
 	{
 		if (list->zero == 1)
 			list->width = 1;

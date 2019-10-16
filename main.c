@@ -2,8 +2,8 @@
 
 int		main(void)
 {
-//	ft_printf("%d\n", ft_printf("%f\n", 45.236));
-//	printf("%d\n", printf("%f\n", 45.236));
+	ft_printf("%d\n", ft_printf("%040f\n", 45.236));
+	printf("%d\n", printf("%040f\n", 45.236));
 
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
 //	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
