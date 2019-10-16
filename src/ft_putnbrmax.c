@@ -26,6 +26,24 @@ void	ft_putnbrmax(intmax_t n, t_printf *l)
 	}
 }
 
+void	ft_putnbrmax_for_f(int i, int d, t_printf *l,int len_num)
+{
+	int j;
+
+	j = 0;
+	ft_putnbrmax(i, l);
+	if (l->precision == 1 && l->number == 0)
+		ft_putchar('0');
+	l->count++;
+	ft_putchar('.');
+	while (j++ < l->precision_space - len_num + 1)
+	{
+		l->count++;
+		ft_putchar('0');
+	}
+	ft_putnbrmax(d, l);
+}
+
 int		ft_str_equally(char *str1, char *str2)
 {
 	while (*str1 != '\0' && *str2 != '\0')

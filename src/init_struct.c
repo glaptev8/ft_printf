@@ -2,6 +2,8 @@
 
 void	init_struct(t_printf *l)
 {
+	l->decimal = 0;
+	l->integer = 0;
 	l->minus = 0;
 	l->plus = 0;
 	l->is_number = 0;
@@ -15,6 +17,7 @@ void	init_struct(t_printf *l)
 	l->minus_space = 0;
 	l->width_space = 0;
 	l->precision_space = -1;
+	l->precision_space = -1;
 	l->l = 0;
 	l->ll = 0;
 	l->h = 0;
@@ -24,6 +27,7 @@ void	init_struct(t_printf *l)
 	l->number_o = 0;
 	l->X = 0;
 	l->u = 0;
+	l->floatminus = 0;
 }
 
 void	init_struct_functions(t_printf *l)

@@ -41,3 +41,15 @@ int		get_number_len_for_16(uintmax_t n)
 	}
 	return (i);
 }
+
+int		ft_pow(int n, int p)
+{
+	int i;
+	int nb;
+
+	nb = n;
+	i = 0;
+	while (i++ < p)
+		n = n * nb;
+	return (n);
+}

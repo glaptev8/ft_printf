@@ -2,8 +2,42 @@
 
 int		main(void)
 {
-	printf("%d\n", ft_printf("%lo\n",ULONG_MAX));
-	printf("%d\n", printf("%lo\n",ULONG_MAX));
+//	ft_printf("%d\n", ft_printf("%f\n", 45.236));
+//	printf("%d\n", printf("%f\n", 45.236));
+
+//	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
+//	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
+
+//	ft_printf("%d\n", ft_printf("This is a float : %3f\n", 45.236));
+//	ft_printf("%d\n",   printf("This is a float : %3f\n\n", 45.236));
+
+//	ft_printf("%d\n", ft_printf("This is a float : %f\n", -45.236));
+//	ft_printf("%d\n", printf("This is a float : %f\n\n", -45.236));
+
+//	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", -45.236622));
+//	ft_printf("%d\n", printf("This is a float : %.3f\n\n", -45.236622));
+//
+//	ft_printf("%d\n", ft_printf("This is a float : %3f\n", -45.236));
+//	ft_printf("%d\n", printf("This is a float : %3f\n\n", -45.236));
+//
+//	ft_printf("This is a float : %f\n", 0.00025);
+//	   printf("This is a float : %f\n", 0.00025);
+
+//	ft_printf("This is a float : %.3f\n", 0.00025);
+//	printf("This is a float : %.3f\n\n", 0.00025);
+//
+//	ft_printf("This is a float : %3f\n", 0.00025);
+//	printf("This is a float : %3f\n\n", 0.00025);
+//
+//	ft_printf("This is a float : %f\n", -0.00025);
+//	printf("This is a float : %f\n\n", -0.00025);
+
+//	ft_printf("This is a float : %.3f\n", -0.00025);
+//	printf("This is a float : %.3f\n\n", -0.00025);
+//
+//	ft_printf("This is a float : %3f\n", -0.00025);
+//	printf("This is a float : %3f\n\n", -0.00025);
+
 	return (0);
 }
 
