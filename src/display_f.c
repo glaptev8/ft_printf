@@ -34,6 +34,9 @@ void	display_f(t_printf *list)
 	int len_num;
 	int	len;
 
+	if (list->L == 1)
+		n = va_arg(list->argc, long double);
+	else
 	n = va_arg(list->argc, double);
 	len = initialze_display_f(list, n, &len_num);
 	if (list->space == 1 && list->plus != 1 && list->number >= 0)

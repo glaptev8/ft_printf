@@ -2,9 +2,9 @@
 
 int		main(void)
 {
-	ft_printf("%d\n", ft_printf("%040f\n", 45.236));
-	printf("%d\n", printf("%040f\n", 45.236));
-
+	 long double x = 9.33;
+	   printf( "%lf\n", x );
+	ft_printf( "%lf\n", x );
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
 //	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
 

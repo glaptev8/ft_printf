@@ -27,7 +27,7 @@ int		is_flag(t_printf list)
 
 	if (ft_isdigit(list.format[list.i]) && list.format[list.i] != '0')
 		return (5);
-	flags = ft_strdup("-+# .*0l2h2");
+	flags = ft_strdup("-+# .*0l2h2L");
 	i = 0;
 	while (flags[i] != '\0')
 	{

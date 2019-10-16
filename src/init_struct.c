@@ -28,6 +28,7 @@ void	init_struct(t_printf *l)
 	l->X = 0;
 	l->u = 0;
 	l->floatminus = 0;
+	l->L = 0;
 }
 
 void	init_struct_functions(t_printf *l)
@@ -43,6 +44,7 @@ void	init_struct_functions(t_printf *l)
 	l->add_functions[8] = &add_ll;
 	l->add_functions[9] = &add_h;
 	l->add_functions[10] = &add_hh;
+	l->add_functions[11] = &add_ll;
 }
 
 void	init_display_functions(t_printf *l)
