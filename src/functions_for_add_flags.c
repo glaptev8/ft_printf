@@ -66,8 +66,6 @@ void	add_width(t_printf *list)
 {
 	char *num;
 	list->width = 1;
-//	if (list->zero == 1)
-//		return;
 	if (list->format[list->i] == '*')
 	{
 		list->width_space = va_arg(list->argc, int);
@@ -88,7 +86,6 @@ void	add_width(t_printf *list)
 			list->i++;
 		list->i--;
 	}
-//	printf("(%d)", list->width_space);
 }
 
 void	add_zero(t_printf *list)
@@ -106,5 +103,4 @@ void	add_zero(t_printf *list)
 			list->i++;
 		list->i--;
 	}
-//	printf("(%d)", list->zero_space);
 }

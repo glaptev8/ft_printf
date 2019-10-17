@@ -15,3 +15,41 @@ int		get_number_len(intmax_t n, t_printf list)
 	}
 	return (i);
 }
+
+int		get_number_len_for_uint(uintmax_t n)
+{
+	int i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 10;
+		i++;
+	}
+	return (i);
+}
+
+int		get_number_len_for_16(uintmax_t n)
+{
+	int i;
+
+	i = 0;
+	while (n != 0)
+	{
+		n /= 16;
+		i++;
+	}
+	return (i);
+}
+
+int		ft_pow(int n, int p)
+{
+	int i;
+	int nb;
+
+	nb = n;
+	i = 0;
+	while (i++ < p)
+		n = n * nb;
+	return (n);
+}

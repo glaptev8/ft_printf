@@ -31,6 +31,7 @@ CFILE = display_procent.c \
 		init_displays.c \
 		displays_for_d.c \
 		converter.c \
+		displays_for_u.c \
 		displays_for_o.c
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

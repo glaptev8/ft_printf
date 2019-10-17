@@ -38,7 +38,7 @@ void	display_width_d(t_printf *list, int len)
 	}
 }
 
-void	list_plus_d(t_printf *list, intmax_t *n)
+void	display_plus_d(t_printf *list, intmax_t *n)
 {
 	list->count++;
 	*n < 0 ? ft_putchar('-') : ft_putchar('+');
@@ -69,8 +69,13 @@ void	display_minus_d(t_printf *list, intmax_t n, int len)
 	int i;
 
 	i = list->width_space;
-	if (!(list->precision_space <= 0 && n == 0))
-		ft_putnbrmax(n, list);
+	if (!(list->precision == 1 && list->number == 0))
+	{
+		if (list->u == 1)
+			ft_putnbrmax_o(n, list);
+		else
+			ft_putnbrmax(n, list);
+	}
 	while (i-- > len)
 	{
 		list->count++;

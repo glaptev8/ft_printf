@@ -9,11 +9,11 @@ uintmax_t	get_number_for_o(t_printf *list)
 	else if (list->ll == 1)
 		n = va_arg(list->argc, unsigned long long int);
 	else if (list->h == 1)
-		n = (unsigned short)va_arg(list->argc,unsigned int);
+		n = (unsigned short)va_arg(list->argc, unsigned int);
 	else if (list->hh == 1)
 		n = (unsigned char)va_arg(list->argc,unsigned int);
 	else
-		n = va_arg(list->argc, unsigned int);
+		n = (unsigned int)va_arg(list->argc, unsigned int);
 	n = (uintmax_t)n;
 	return (n);
 }
@@ -26,7 +26,6 @@ void	display_o(t_printf *list)
 	int		i;
 	int		len_num;
 
-	list->is_o = 1;
 	len = initialze_display_o(list, &n, &len_num);
 	if (list->space == 1)
 		display_space_o(list, &len);
@@ -37,9 +36,11 @@ void	display_o(t_printf *list)
 	if (list->precision == 1)
 		display_precision_o(list, len_num);
 	if (list->sharp == 1)
-		display_sharp_o(list);
+		display_sharp_o(list, &len);
 	if (list->minus == 1)
-		display_minus_o(list, n, len);
-	else if (!(list->precision_space <= 0 && n == 0 && list->precision == 1))
+		display_minus_o(list, len);
+	else if (!(list->precision_space <= 0 && n == 0))
+		ft_putnbrmax_o(n, list);
+	else if (list->sharp != 1 && n == 0 && list->precision != 1)
 		ft_putnbrmax_o(n, list);
 }

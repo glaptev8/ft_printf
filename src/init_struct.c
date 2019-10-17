@@ -2,6 +2,8 @@
 
 void	init_struct(t_printf *l)
 {
+	l->decimal = 0;
+	l->integer = 0;
 	l->minus = 0;
 	l->plus = 0;
 	l->is_number = 0;
@@ -22,6 +24,10 @@ void	init_struct(t_printf *l)
 	l->is_o = 0;
 	l->is_0x = 0;
 	l->number_o = 0;
+	l->X = 0;
+	l->u = 0;
+	l->floatminus = 0;
+	l->L = 0;
 }
 
 void	init_struct_functions(t_printf *l)
@@ -37,6 +43,7 @@ void	init_struct_functions(t_printf *l)
 	l->add_functions[8] = &add_ll;
 	l->add_functions[9] = &add_h;
 	l->add_functions[10] = &add_hh;
+	l->add_functions[11] = &add_ll;
 }
 
 void	init_display_functions(t_printf *l)
@@ -49,7 +56,7 @@ void	init_display_functions(t_printf *l)
 	l->display[5] = &display_o;
 	l->display[6] = &display_u;
 	l->display[7] = &display_x;
-	l->display[8] = &display_X;
+	l->display[8] = &display_xx;
 	l->display[9] = &display_f;
 	l->display[10] = &display_procent;
 }
