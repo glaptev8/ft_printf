@@ -14,12 +14,10 @@ void	display_zero_u(t_printf *list, int *len, uintmax_t *n)
 	i = list->width_space;
 	while (i-- > *len)
 	{
-		if (*n < 0 || list->plus == 1)
+		if (list->plus == 1)
 		{
 			list->count++;
-			*n < 0 ? *n *= -1 : 0;
 			list->plus = 0;
-			list->number_o < 0 ? ft_putchar('-') : ft_putchar('+');
 		}
 		list->count++;
 		ft_putchar('0');
@@ -41,8 +39,6 @@ void	display_width_u(t_printf *list, int len)
 void	display_plus_u(t_printf *list, uintmax_t *n)
 {
 	list->count++;
-	*n < 0 ? ft_putchar('-') : ft_putchar('+');
-	*n < 0 ? *n *= (-1) : 0;
 }
 
 void	display_precision_u(t_printf *list, uintmax_t *n, int len_num)
@@ -50,13 +46,6 @@ void	display_precision_u(t_printf *list, uintmax_t *n, int len_num)
 	int i;
 
 	i = 0;
-	(list->number_o < 0 || list->plus == 1) ? i-- : 0;
-	if (*n < 0)
-	{
-		list->count++;
-		*n *= -1;
-		ft_putchar('-');
-	}
 	while (i++ < list->precision_space - len_num)
 	{
 		list->count++;

@@ -27,7 +27,7 @@ void	display_o(t_printf *list)
 	int		len_num;
 
 	len = initialze_display_o(list, &n, &len_num);
-	if (list->space == 1 && list->number_o >= 0)
+	if (list->space == 1)
 		display_space_o(list, &len);
 	if (list->zero == 1)
 		display_zero_o(list, &len);

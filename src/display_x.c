@@ -26,7 +26,7 @@ void	display_x(t_printf *list)
 
 	len = initialze_display_x(list, n, &len_num);
 	n = converter_16(list->number_o, list);
-	if (list->space == 1 && list->number_o >= 0)
+	if (list->space == 1)
 		display_space_o(list, &len);
 	if (list->zero == 1)
 		display_zero_o(list, &len);

@@ -16,7 +16,7 @@ void	display_minus_f(t_printf *list, int i, int d, int len)
 	}
 }
 
-void	display_precision_f(t_printf *list, int *i, int len_num)
+void	display_precision_f(t_printf *list, long long int *i, int len_num)
 {
 	int j;
 
@@ -50,7 +50,7 @@ void	display_f(t_printf *list)
 	if (list->precision == 1)
 		display_precision_f(list, &(list->integer), len_num);
 	if (list->minus == 1)
-		display_minus_f(list, list->integer, list->decimal, len);
+		display_minus_f(list, (intmax_t)list->integer, list->decimal, len);
 	else if (!(list->precision_space <= 0 && n == 0 && list->precision == 1))
-		ft_putnbrmax_for_f(list->integer, list->decimal, list, len_num);
+		ft_putnbrmax_for_f((intmax_t)list->integer, list->decimal, list, len_num);
 }

@@ -37,12 +37,12 @@ int		initialze_display_f(t_printf *list, double n,int *len_num)
 	if (n < 0 && n > -1)
 		list->floatminus = 1;
 	p = ft_pow(10, list->precision_space);
-	list->integer = (int)(n * p);
+	list->integer = (long long int)(n * p);
 	list->number = list->integer / 10;
 	d_len = list->integer % p;
 	d_len *= d_len > 0 ? 1 : -1;
 	if (list->precision_space < get_number_len(d_len, *list))
-		list->decimal = d_len % 10 >= 5 ? d_len / 10 + 1 : d_len / 10;
+		list->decimal = d_len % 10 > 5 ? d_len / 10 + 1 : d_len / 10;
 	else
 		list->decimal = d_len / 10;
 	list->decimal *= list->decimal < 0 ? -1 : 1;
@@ -136,6 +136,8 @@ int		initialze_display_x(t_printf *list, char *n, int *len_num)
 	n = converter_16(list->number_o, list);
 	len = get_number_len_for_16(list->number_o);
 	*len_num = len;
+	if (*n == 0)
+		*len_num = 1;
 	if (n[0] == '0' && len == 0)
 	{
 		if (!(list->precision == 1 && list->precision_space <= 0))

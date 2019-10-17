@@ -2,8 +2,8 @@
 
 int		main(void)
 {
-	printf("%#-3o\n", 0);
-	ft_printf("%#-3o", 0);
+	printf("%#-3x1\n", 0);
+	ft_printf("%#-3x1", 0);
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
 //	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
 

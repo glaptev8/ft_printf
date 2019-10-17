@@ -49,12 +49,15 @@ void	display_sharp_o(t_printf *list, int *len)
 		list->count++;
 		ft_putchar('0');
 	}
-	else if (list->is_0x && list->number_o != 0)
+	else if (list->is_0x)
 	{
 		if (list->number_o == 0)
 			*len -= 2;
-		list->count += 2;
-		list->X == 1 ? ft_putstr("0X") : ft_putstr("0x");
+		else
+		{
+			list->count += 2;
+			list->X == 1 ? ft_putstr("0X") : ft_putstr("0x");
+		}
 	}
 }
 

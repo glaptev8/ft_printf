@@ -34,9 +34,7 @@ int		is_flag(t_printf list)
 		if (list.format[list.i] == flags[i])
 		{
 			if (flags[i] == 'l' && list.format[list.i + 1] == 'l')
-			{
 				return (++i);
-			}
 			else if (flags[i] == 'h' && list.format[list.i + 1] == 'h')
 				return (++i);
 			return (i);

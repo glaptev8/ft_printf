@@ -18,7 +18,7 @@ typedef struct 	s_printf
 	short		zero;
 	int			zero_space;
 	short		sharp;
-	int			integer;
+	long long int			integer;
 	int 		decimal;
 	int			count;
 	int			minus;
@@ -108,7 +108,7 @@ int		get_number_len_for_uint(uintmax_t n);
 void			ft_putstr_cool(char *str, long int len, t_printf *list);
 int		initialze_display_u(t_printf *list, uintmax_t *n, int *len_num);
 int		ft_pow(int n, int p);
-void	display_precision_f(t_printf *list, int *i, int len_num);
+void	display_precision_f(t_printf *list, long long int *i, int len_num);
 void	display_minus_f(t_printf *list, int i, int d, int len);
 int		ft_pow(int n, int p);
 void	ft_putnbrmax_for_f(int i, int d, t_printf *l, int len_num);
