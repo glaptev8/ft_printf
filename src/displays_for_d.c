@@ -69,7 +69,7 @@ void	display_minus_d(t_printf *list, intmax_t n, int len)
 	int i;
 
 	i = list->width_space;
-	if (!(list->precision_space <= 0 && n == 0))
+	if (!(list->precision == 1 && list->number == 0))
 	{
 		if (list->u == 1)
 			ft_putnbrmax_o(n, list);

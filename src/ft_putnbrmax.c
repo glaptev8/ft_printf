@@ -32,16 +32,19 @@ void	ft_putnbrmax_for_f(int i, int d, t_printf *l,int len_num)
 
 	j = 0;
 	ft_putnbrmax(i, l);
-	if (l->precision == 1 && l->number == 0)
-		ft_putchar('0');
-	l->count++;
-	ft_putchar('.');
-	while (j++ < l->precision_space - len_num + 1)
+	if (l->precision_space > 0)
 	{
+		if (l->precision == 1 && l->number == 0)
+			ft_putchar('0');
 		l->count++;
-		ft_putchar('0');
+		ft_putchar('.');
+		while (j++ < l->precision_space - len_num + 1)
+		{
+			l->count++;
+			ft_putchar('0');
+		}
+		ft_putnbrmax(d, l);
 	}
-	ft_putnbrmax(d, l);
 }
 
 int		ft_str_equally(char *str1, char *str2)
@@ -77,8 +80,11 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 			ft_putnbrmax_o(n / 10, l);
 		if (!(l->u == 1 && get_number_len_for_uint(n) >= 20))
 		{
-			l->count++;
-			ft_putchar((n % 10) + '0');
+			if (l->precision_space > 0 || l->precision == 0)
+			{
+				l->count++;
+				ft_putchar((n % 10) + '0');
+			}
 		}
 	}
 }

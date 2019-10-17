@@ -35,7 +35,7 @@ void	display_x(t_printf *list)
 	if (list->precision == 1)
 		display_precision_o(list, len_num);
 	if (list->sharp == 1)
-		display_sharp_o(list, len);
+		display_sharp_o(list, &len);
 	if (list->minus == 1)
 		display_minus_x(list, len, len_num, n);
 	else if (!(list->precision_space <= 0 && list->number_o == 0 && list->precision == 1))

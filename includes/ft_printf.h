@@ -95,7 +95,7 @@ char			*converter_16(uintmax_t n, t_printf *list);
 uintmax_t	get_number_for_o(t_printf *list);
 int		initialze_display_x(t_printf *list, char *n, int *len_num);
 int		get_number_len_for_16(uintmax_t n);
-void	display_sharp_o(t_printf *list, int len);
+void	display_sharp_o(t_printf *list, int *len);
 void	display_minus_x(t_printf *list, int len, int len_num, char *n);
 void	ft_putnbrmax_x(char *n);
 void	display_minus_u(t_printf *list, uintmax_t n, int len);
