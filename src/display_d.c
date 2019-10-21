@@ -17,7 +17,7 @@ intmax_t	get_number_for_d(t_printf *list)
 	intmax_t n;
 
 	if (list->l == 1)
-		n = va_arg(list->argc, long int);
+		n = (long int)va_arg(list->argc, long int);
 	else if (list->ll == 1)
 		n = va_arg(list->argc, long long int);
 	else if (list->h == 1)

@@ -37,7 +37,7 @@ void	display_x(t_printf *list)
 	int		len;
 	int		len_num;
 
-	len = initialze_display_x(list, &n, &len_num);
+	len = initialze_display_x(list, n, &len_num);
 	n = converter_16(list->number_o, list);
 	if (list->space == 1)
 		display_space_o(list, &len);

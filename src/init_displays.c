@@ -119,7 +119,9 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	*n = converter(*n, 8);
 	list->number_o = *n;
 	len = get_number_len_for_uint(*n);
-	*len_num = (*n == 0) ? 1 : len;
+	*len_num = len;
+	if (*n == 0)
+		*len_num = 1;
 	if (list->precision == 1 || list->minus == 1)
 	{
 		if (list->zero == 1)
@@ -129,10 +131,13 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	if (list->minus == 1)
 		list->width = 0;
 	len += (list->precision_space > len ? list->precision_space - len : 0);
-	if (list->sharp == 1 && list->is_o == 1)
-		len++;
-	else if (list->sharp == 1 && list->is_0x == 1)
-		len += 2;
+	if (list->sharp == 1)
+	{
+		if (list->is_o == 1)
+			len++;
+		else if (list->is_0x == 1)
+			len += 2;
+	}
 	if ((list->precision != 1 && list->number_o == 0))
 		len++;
 	return (len);
@@ -146,10 +151,15 @@ int		initialze_display_x(t_printf *list, char *n, int *len_num)
 	list->number_o = get_number_for_o(list);
 	n = converter_16(list->number_o, list);
 	len = get_number_len_for_16(list->number_o);
-	if (n[0] == '0' && len == 0 &&
-	(!(list->precision == 1 && list->precision_space <= 0)))
-		len = 1;
 	*len_num = len;
+	if (n[0] == '0' && len == 0)
+	{
+		if (!(list->precision == 1 && list->precision_space <= 0))
+		{
+			len = 1;
+			*len_num = 1;
+		}
+	}
 	if (list->precision == 1 || list->minus == 1)
 	{
 		if (list->zero == 1)
@@ -159,10 +169,12 @@ int		initialze_display_x(t_printf *list, char *n, int *len_num)
 	if (list->minus == 1)
 		list->width = 0;
 	len += (list->precision_space > len ? list->precision_space - len : 0);
-	if (list->sharp == 1 && list->is_o == 1)
-		len++;
-	else if (list->sharp == 1 && list->is_0x == 1)
-		len += 2;
-	free(n);
+	if (list->sharp == 1)
+	{
+		if (list->is_o == 1)
+			len++;
+		else if (list->is_0x == 1)
+			len += 2;
+	}
 	return (len);
 }

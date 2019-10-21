@@ -22,12 +22,6 @@ void	add_space(t_printf *list)
 {
 	if (list->plus != 1)
 		list->space = 1;
-	if (list->format[list->i + 1] == ' ')
-	{
-		while (list->format[list->i] == ' ')
-			list->i++;
-		list->i--;
-	}
 }
 
 void	add_precision(t_printf *list)
