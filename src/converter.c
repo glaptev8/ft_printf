@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   converter.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 11:50:25 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 11:56:16 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 uintmax_t		converter(uintmax_t n, int base)
@@ -15,11 +27,8 @@ char			*converter_16(uintmax_t n, t_printf *list)
 {
 	char	*sym;
 	char	*sym2;
-	int		i;
 	char	*str;
-	int 	len;
-
-	i = 0;
+	int		len;
 
 	sym = ft_strdup("0123456789abcdef");
 	sym2 = ft_strdup("0123456789ABCDEF");

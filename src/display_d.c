@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_d.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 11:57:14 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 11:57:53 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 intmax_t	get_number_for_d(t_printf *list)
@@ -20,10 +32,10 @@ intmax_t	get_number_for_d(t_printf *list)
 
 void		display_d(t_printf *list)
 {
-	intmax_t n;
-	int		len;
-	int		i;
-	int		len_num;
+	intmax_t	n;
+	int			len;
+	int			i;
+	int			len_num;
 
 	len = initialze_display_d(list, &n, &len_num);
 	if (list->space == 1 && list->plus != 1 && list->number >= 0)

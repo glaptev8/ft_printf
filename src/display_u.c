@@ -1,11 +1,23 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_u.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:00:44 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 12:00:59 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 void	display_u(t_printf *list)
 {
-	uintmax_t n;
-	int		len;
-	int		i;
-	int		len_num;
+	uintmax_t	n;
+	int			len;
+	int			i;
+	int			len_num;
 
 	len = initialze_display_u(list, &n, &len_num);
 	if (list->space == 1 && list->plus != 1 && list->number >= 0)

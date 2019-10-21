@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   display_o.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 11:58:28 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 11:59:30 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 uintmax_t	get_number_for_o(t_printf *list)
@@ -11,20 +23,19 @@ uintmax_t	get_number_for_o(t_printf *list)
 	else if (list->h == 1)
 		n = (unsigned short)va_arg(list->argc, unsigned int);
 	else if (list->hh == 1)
-		n = (unsigned char)va_arg(list->argc,unsigned int);
+		n = (unsigned char)va_arg(list->argc, unsigned int);
 	else
 		n = (unsigned int)va_arg(list->argc, unsigned int);
 	n = (uintmax_t)n;
 	return (n);
 }
 
-
-void	display_o(t_printf *list)
+void		display_o(t_printf *list)
 {
-	uintmax_t n;
-	int		len;
-	int		i;
-	int		len_num;
+	uintmax_t	n;
+	int			len;
+	int			i;
+	int			len_num;
 
 	len = initialze_display_o(list, &n, &len_num);
 	if (list->space == 1)

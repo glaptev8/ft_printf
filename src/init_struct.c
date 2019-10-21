@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   init_struct.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 13:56:45 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 13:57:49 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 void	init_struct(t_printf *l)
@@ -17,6 +29,11 @@ void	init_struct(t_printf *l)
 	l->minus_space = 0;
 	l->width_space = 0;
 	l->precision_space = -1;
+	init_strcut2(l);
+}
+
+void	init_strcut2(t_printf *l)
+{
 	l->l = 0;
 	l->ll = 0;
 	l->h = 0;

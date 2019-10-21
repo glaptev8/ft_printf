@@ -1,34 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   functions_for_add_flags2.c                         :+:      :+:    :+:   */
+/*   displays_for_space.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/21 12:35:20 by tmelia            #+#    #+#             */
-/*   Updated: 2019/10/21 12:35:21 by tmelia           ###   ########.fr       */
+/*   Created: 2019/10/21 13:55:54 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 13:55:56 by tmelia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/ft_printf.h"
 
-void	add_l(t_printf *list)
+void	display_space_d(t_printf *list, int *len)
 {
-	list->l = 1;
+	(*len)++;
+	list->count++;
+	ft_putchar(' ');
 }
 
-void	add_h(t_printf *list)
+void	display_space_o(t_printf *list, int *len)
 {
-	list->h = 1;
+	(*len)++;
+	list->count++;
+	ft_putchar(' ');
 }
 
-void	add_ll(t_printf *list)
+void	display_space_u(t_printf *list, int *len)
 {
-	list->ll = 1;
-	list->L = 1;
-}
-
-void	add_hh(t_printf *list)
-{
-	list->hh = 1;
+	(*len)++;
+	list->count++;
+	ft_putchar(' ');
 }

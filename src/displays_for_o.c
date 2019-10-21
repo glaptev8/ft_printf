@@ -1,11 +1,16 @@
-#include "../includes/ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   displays_for_o.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:22:23 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 12:22:24 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	display_space_o(t_printf *list, int *len)
-{
-	(*len)++;
-	list->count++;
-	ft_putchar(' ');
-}
+#include "../includes/ft_printf.h"
 
 void	display_zero_o(t_printf *list, int *len)
 {

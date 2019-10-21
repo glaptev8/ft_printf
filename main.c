@@ -2,8 +2,9 @@
 
 int		main(void)
 {
-	printf("%#.o\n", 42);
-	ft_printf("%#.o", 42);
+	char *s = "dsad";
+//	printf("%#.o\n", 42);
+	ft_printf("%p", s);
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
 //	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
 

@@ -20,10 +20,11 @@ CFILE = display_procent.c \
 		display_s.c \
 		display_u.c \
 		display_x.c \
-		display_x^.c \
+		display_xx.c \
 		ft_printf.c \
 		functions_for_add_flags.c \
 		functions_for_add_flags2.c \
+		functions_for_add_flags3.c \
 		init_struct.c \
 		is_conversion.c \
 		ft_putnbrmax.c \
@@ -32,7 +33,9 @@ CFILE = display_procent.c \
 		displays_for_d.c \
 		converter.c \
 		displays_for_u.c \
-		displays_for_o.c
+		displays_for_o.c \
+		displays_for_space.c
+
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 
 OFILE =		$(CFILE:%.c=%.o)

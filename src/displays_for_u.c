@@ -1,11 +1,16 @@
-#include "../includes/ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   displays_for_u.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:23:21 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 12:23:23 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	display_space_u(t_printf *list, int *len)
-{
-	(*len)++;
-	list->count++;
-	ft_putchar(' ');
-}
+#include "../includes/ft_printf.h"
 
 void	display_zero_u(t_printf *list, int *len, uintmax_t *n)
 {
@@ -58,13 +63,10 @@ void	display_minus_u(t_printf *list, uintmax_t n, int len)
 	int i;
 
 	i = list->width_space;
-//	if (!(list->precision_space <= 0 && list->number_o == 0))
-//	{
-		if (list->u == 1)
-			ft_putnbrmax_o(n, list);
-		else
-			ft_putnbrmax(n, list);
-//	}
+	if (list->u == 1)
+		ft_putnbrmax_o(n, list);
+	else
+		ft_putnbrmax(n, list);
 	while (i-- > len)
 	{
 		list->count++;

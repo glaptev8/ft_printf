@@ -1,11 +1,16 @@
-#include "../includes/ft_printf.h"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   displays_for_d.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:07:58 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 12:08:00 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-void	display_space_d(t_printf *list, int *len)
-{
-	(*len)++;
-	list->count++;
-	ft_putchar(' ');
-}
+#include "../includes/ft_printf.h"
 
 void	display_zero_d(t_printf *list, int *len, intmax_t *n)
 {

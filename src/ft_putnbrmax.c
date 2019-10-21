@@ -1,8 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbrmax.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: tmelia <marvin@42.fr>                      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/10/21 12:30:54 by tmelia            #+#    #+#             */
+/*   Updated: 2019/10/21 12:32:33 by tmelia           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/ft_printf.h"
 
 void	ft_putnbrmax(intmax_t n, t_printf *l)
 {
-
 	if (n == -9223372036854775807 - 1)
 	{
 		l->count += 20;
@@ -26,7 +37,7 @@ void	ft_putnbrmax(intmax_t n, t_printf *l)
 	}
 }
 
-void	ft_putnbrmax_for_f(int i, int d, t_printf *l,int len_num)
+void	ft_putnbrmax_for_f(int i, int d, t_printf *l, int len_num)
 {
 	int j;
 
@@ -71,8 +82,8 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 	}
 	else if (l->is_o == 1 && get_number_len_for_uint(n) >= 19)
 	{
-			l->count += 22;
-			write(1, "1777777777777777777777", 22);
+		l->count += 22;
+		write(1, "1777777777777777777777", 22);
 	}
 	else
 	{
@@ -80,7 +91,9 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 			ft_putnbrmax_o(n / 10, l);
 		if (!(l->u == 1 && get_number_len_for_uint(n) >= 20))
 		{
-			if (l->precision_space > 0 || l->precision == 0 || (l->precision == 1 && l->precision_space < 0 && l->number_o != 0))
+			if (l->precision_space > 0 || l->precision == 0 ||
+					(l->precision == 1 && l->precision_space < 0 &&
+					l->number_o != 0))
 			{
 				l->count++;
 				ft_putchar((n % 10) + '0');
@@ -95,4 +108,3 @@ void	ft_putnbrmax_x(char *n)
 		write(1, "7fffffffffffffff", 16);
 	ft_putstr(n);
 }
-
