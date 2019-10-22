@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ftoa.c                                          :+:      :+:    :+:   */
+/*   ft_l_ftoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cjosue <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/19 16:20:43 by cjosue            #+#    #+#             */
-/*   Updated: 2019/10/19 16:22:22 by cjosue           ###   ########.fr       */
+/*   Created: 2019/10/22 12:24:51 by cjosue            #+#    #+#             */
+/*   Updated: 2019/10/22 12:24:54 by cjosue           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void					ft_rounding(char *arr, int i)
 	}
 }
 
-char					*ft_ftoa_div(double d, int pr)
+char					*ft_ftoa_div(long double d, int pr)
 {
 	char				*arr;
 	int					i;
@@ -64,7 +64,7 @@ char					*ft_ftoa_div(double d, int pr)
 	return (arr);
 }
 
-char					*ft_ftoa(double d, int pr)
+char					*ft_l_ftoa(long double d, int pr)
 {
 	char				*num;
 	long unsigned int	mod;
