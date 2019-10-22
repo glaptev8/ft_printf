@@ -2,14 +2,18 @@
 
 int		main(void)
 {
-	char *s = "dsad";
+
+//	ft_printf("%+08.6f\n", 7.3);
+//	printf("%+08.6f", 7.3);
+	ft_printf("%+05.0f\n", -7.3);
+	printf("%+05.0f", -7.3);
 //	printf("%#.o\n", 42);
-	ft_printf("%p", s);
+//	ft_printf("%f", 234.34);
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
 //	printf("%d\n", printf("This is a float : %.3f\n", 45.236));
 
-//	ft_printf("%d\n", ft_printf("This is a float : %3f\n", 45.236));
-//	ft_printf("%d\n",   printf("This is a float : %3f\n\n", 45.236));
+//	ft_printf("%d\n", ft_printf("%3f 1\n", 45.236));
+//	ft_printf("%d\n",   printf("%3f 1\n", 45.236));
 
 //	ft_printf("%d\n", ft_printf("This is a float : %f\n", -45.236));
 //	ft_printf("%d\n", printf("This is a float : %f\n\n", -45.236));

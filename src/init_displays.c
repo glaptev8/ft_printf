@@ -37,34 +37,28 @@ int		initialze_display_d(t_printf *list, intmax_t *n, int *len_num)
 	return (len);
 }
 
-int		initialze_display_f(t_printf *list, double n, int *len_num)
+int		initialze_display_f(t_printf *list,double n, int *len_num, char **str)
 {
 	int p;
 	int len;
 	int d_len;
 
 	if (list->precision == 0)
-		list->precision = 1;
-	if (list->precision_space < 0)
+	{
 		list->precision_space = 6;
-	if (n < 0 && n > -1)
-		list->floatminus = 1;
-	p = ft_pow(10, list->precision_space);
-	list->integer = (int)(n * p);
-	list->number = list->integer / 10;
-	d_len = list->integer % p;
-	d_len *= d_len > 0 ? 1 : -1;
-	if (list->precision_space < get_number_len(d_len, *list))
-		list->decimal = d_len % 10 >= 5 ? d_len / 10 + 1 : d_len / 10;
+		list->precision = 1;
+	}
+//	if (list->precision_space <= 0)
+//		list->precision_space = 6;
+	if (list->L == 1)
+		*str = ft_l_ftoa(n, list->precision_space);
 	else
-		list->decimal = d_len / 10;
-	list->decimal *= list->decimal < 0 ? -1 : 1;
-	list->integer /= p;
-	len = get_number_len(list->integer, *list) +
-		get_number_len_for_uint(list->decimal);
-	d_len = ft_pow(10, (get_number_len((uintmax_t)list->decimal, *list) -
-				list->precision_space) - 1);
-	len++;
+		*str = ft_ftoa(n, list->precision_space);
+	if (list->precision_space <= 0)
+		*ft_strchr(*str, '.') = '\0';
+	list->number = (*str[0] == '-') ? -1 : 1;
+	(*str)++;
+	len = ft_strlen(*str);
 	*len_num = len;
 	if (list->minus == 1)
 	{
@@ -72,11 +66,11 @@ int		initialze_display_f(t_printf *list, double n, int *len_num)
 			list->width = 1;
 		list->zero = 0;
 	}
+	if (list->sharp == 1 && list->precision_space <= 0)
+		len++;
 	if (list->minus == 1)
 		list->width = 0;
-	len += (list->precision_space > len ? list->precision_space - len : 0);
-	if ((list->number < 0 || list->plus == 1) &&
-			(list->precision_space > *len_num - 1))
+	if (list->plus == 1 || n < 0)
 		len++;
 	return (len);
 }

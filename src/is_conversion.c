@@ -59,3 +59,27 @@ int		is_flag(t_printf list)
 	free(flags);
 	return (-1);
 }
+
+int		get_zero_decimal(char *s)
+{
+	int i;
+	int count;
+
+	count = 0;
+	i = 0;
+	while (s[i] != '\0')
+	{
+		if (s[i] == '.' && s[i + 1] == '0')
+		{
+			i++;
+			while (s[i] == '0')
+			{
+				i++;
+				count++;
+			}
+			break;
+		}
+		i++;
+	}
+	return (count);
+}
