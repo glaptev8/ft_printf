@@ -69,5 +69,9 @@ void		ft_putstr_cool(char *str, long int len, t_printf *list);
 char		*ft_itoa_lu(unsigned long int n);
 char		*ft_ftoa(double d, int pr);
 char		*ft_l_ftoa(long double d, int pr);
+int			ft_rounding(char *div, int i);
+char		*ft_strjoin_re(char *s1, char *s2);
+char		*ft_ftoa(double d, int pr);
+char		*ft_l_ftoa(long double d, int pr);
 
 #endif

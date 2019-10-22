@@ -10,43 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/ft_printf.h"
+#include "../includes/ft_printf.h"
 
-char					*ft_strjoin_re(char *s1, char *s2)
+char					ft_ftoa_div(long double d, int pr, char *arr)
 {
-	char				*tmp;
-
-	tmp = ft_strjoin(s1, s2);
-	ft_strdel(&s1);
-	ft_strdel(&s2);
-	return (tmp);
-}
-
-void					ft_rounding(char *arr, int i)
-{
-	while (arr[i] > '5')
-	{
-		arr[i] = '0';
-		arr[--i]++;
-		if (arr[i]  > '9')
-		{
-			arr[i] = '0';
-			arr[i - 1]++;
-			i--;
-		}
-		else
-			break;
-	}
-}
-
-char					*ft_ftoa_div(long double d, int pr)
-{
-	char				*arr;
 	int					i;
 
 	i = 0;
-	if (!(arr = ft_strnew(++pr)))
-		return (NULL);
 	while (i < pr)
 	{
 		d *= 10.00;
@@ -59,9 +29,13 @@ char					*ft_ftoa_div(long double d, int pr)
 		}
 		i++;
 	}
-	ft_rounding(arr, --i);
+	if (ft_rounding(arr, --i) == 1)
+	{
+		arr[pr - 1] = '\0';
+		return (1);
+	}
 	arr[pr - 1] = '\0';
-	return (arr);
+	return (0);
 }
 
 char					*ft_l_ftoa(long double d, int pr)
@@ -69,6 +43,7 @@ char					*ft_l_ftoa(long double d, int pr)
 	char				*num;
 	long unsigned int	mod;
 	int					i;
+	char				*div;
 
 	if (!(num = ft_strnew(0)))
 		return (NULL);
@@ -79,7 +54,15 @@ char					*ft_l_ftoa(long double d, int pr)
 	}
 	else
 		num = ft_strjoin("+", "\0");
-	num = ft_strjoin_re(num, ft_itoa_lu((unsigned long int)d));
-	num = ft_strjoin_re(num, ft_ftoa_div(d - (unsigned long int)d, pr));
-	return (num);
+	mod = (unsigned long int)d;
+	if (pr <= 0)
+	{
+		if ((unsigned long int)((d - (long double)mod) * 1e1) >= 5)
+			return (ft_strjoin_re(num, ft_itoa_lu(++mod)));
+	}
+	if (!(div = ft_strnew(++pr)))
+		return (num);
+	if (ft_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
+		mod++;
+	return (num = ft_strjoin_re(ft_itoa_lu(mod), div));
 }
