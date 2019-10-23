@@ -22,33 +22,33 @@ char					*ft_strjoin_re(char *s1, char *s2)
 	return (tmp);
 }
 
-void					ft_rounding(char *arr, int i)
+int					ft_rounding(char *div, int i)
 {
-	while (arr[i] >= '5')
+	if (div[i] >= '5')
 	{
-		arr[i] = '0';
-		arr[--i]++;
-		if (arr[i]  > '9')
+		div[--i] += 1;
+		if (div[i] > '9')
 		{
-			arr[i] = '0';
-			arr[i - 1]++;
-			i--;
+			while (div[i] > '9' && i > 0)
+			{
+				div[i] = '0';
+				div[--i] += 1;
+			}
+			if (i == 0 && div[0] > '9')
+			{
+				div[i] = '0';
+				return (1);
+			}
 		}
-		else
-			break;
 	}
+	return (0);
 }
 
-char					*ft_ftoa_div(double d, int pr)
+int						ft_ftoa_div(double d, int pr, char *arr)
 {
-	char				*arr;
 	int					i;
 
 	i = 0;
-//	if (pr <= 0)
-		return (ft_strnew(1));
-	if (!(arr = ft_strnew(++pr)))
-		return (NULL);
 	while (i < pr)
 	{
 		d *= 10.00;
@@ -61,9 +61,28 @@ char					*ft_ftoa_div(double d, int pr)
 		}
 		i++;
 	}
-	ft_rounding(arr, --i);
+	if (ft_rounding(arr, --i) == 1)
+	{
+		arr[pr - 1] = '\0';
+		return (1);
+	}
 	arr[pr - 1] = '\0';
-	return (arr);
+	return (0);
+}
+
+double					ft_sign(char *num, double d)
+{
+	long unsigned int	tmp;
+
+	ft_memcpy(&tmp, &d, sizeof(double));
+	if (tmp & 1L << 63)
+	{
+		num[0] = '-';
+		return (-1.00);
+	}
+	else
+		num[0] = '+';
+	return (1.00);
 }
 
 char					*ft_ftoa(double d, int pr)
@@ -71,17 +90,21 @@ char					*ft_ftoa(double d, int pr)
 	char				*num;
 	long unsigned int	mod;
 	int					i;
+	char				*div;
 
-	if (!(num = ft_strnew(0)))
+	if (!(num = ft_strnew(1)))
 		return (NULL);
-	if (d < 0)
+	d *= ft_sign(num, d);
+	mod = (unsigned long int)d;
+	if (pr <= 0)
 	{
-		num = ft_strjoin("-", "\0");
-		d *= (-1);
+		if ((unsigned long int)((d - (double)mod) * 1e1) >= 5)
+			return (ft_strjoin_re(num, ft_itoa_lu(++mod)));
 	}
-	else
-		num = ft_strjoin("+", "\0");
-	num = ft_strjoin_re(num, ft_itoa_lu((unsigned long int)d));
-	num = ft_strjoin_re(num, ft_ftoa_div(d - (unsigned long int)d, pr));
-	return (num);
+	if (!(div = ft_strnew(++pr)))
+		return (num);
+	if (ft_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
+		mod++;
+	num = ft_strjoin_re(num, ft_itoa_lu(mod));
+	return (ft_strjoin_re(num, div));
 }

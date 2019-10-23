@@ -15,14 +15,19 @@
 void	display_zero_o(t_printf *list, int *len)
 {
 	int		i;
+	int		len_num;
 
+	len_num = *len;
+
+//	if (list->precision == 1 && list->sharp == 1)
+//		len_num++;
 	if ((list->is_0x == 1 || list->is_o == 1) && list->sharp == 1)
 	{
 		display_sharp_o(list, len);
 		list->sharp = 0;
 	}
 	i = list->width_space;
-	while (i-- > *len)
+	while (i-- > len_num)
 	{
 		list->count++;
 		ft_putchar('0');
@@ -49,8 +54,6 @@ void	display_sharp_o(t_printf *list, int *len)
 {
 	if (list->is_o)
 	{
-		if (list->number_o == 0)
-			(*len)--;
 		list->count++;
 		ft_putchar('0');
 	}
@@ -71,6 +74,8 @@ void	display_precision_o(t_printf *list, int len_num)
 	int i;
 
 	i = 0;
+	if (list->precision == 1 && list->sharp == 1)
+		len_num++;
 	while (i++ < list->precision_space - len_num)
 	{
 		list->count++;
@@ -85,6 +90,8 @@ void	display_minus_o(t_printf *list, int len)
 	i = list->width_space;
 	if (!(list->sharp == 1 && list->number_o == 0))
 		ft_putnbrmax_o(list->number_o, list);
+//	if (list->minus == 1 && list->sharp == 1 && list->number_o == 0)
+//		len--;
 	while (i-- > len)
 	{
 		list->count++;

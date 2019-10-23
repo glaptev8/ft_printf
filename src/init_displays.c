@@ -37,7 +37,7 @@ int		initialze_display_d(t_printf *list, intmax_t *n, int *len_num)
 	return (len);
 }
 
-int		initialze_display_f(t_printf *list,double n, int *len_num, char **str)
+int		initialze_display_f(t_printf *list, double n, int *len_num, char **str)
 {
 	int p;
 	int len;
@@ -48,8 +48,6 @@ int		initialze_display_f(t_printf *list,double n, int *len_num, char **str)
 		list->precision_space = 6;
 		list->precision = 1;
 	}
-//	if (list->precision_space <= 0)
-//		list->precision_space = 6;
 	if (list->L == 1)
 		*str = ft_l_ftoa(n, list->precision_space);
 	else
@@ -134,6 +132,8 @@ int		initialze_display_o(t_printf *list, uintmax_t *n, int *len_num)
 	}
 	if ((list->precision != 1 && list->number_o == 0))
 		len++;
+//	if (list->precision == 1 && list->sharp == 1)
+//		len++;
 	return (len);
 }
 

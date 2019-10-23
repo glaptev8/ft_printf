@@ -118,10 +118,11 @@ void	display_space_d(t_printf *list, int *len);
 void	init_strcut2(t_printf *l);
 int		ft_add_flags(t_printf *list, int *flag);
 int		get_zero_decimal(char *s);
-char				*ft_itoa_lu(unsigned long int n);
-char					*ft_ftoa(double d, int pr);
-char					*ft_l_ftoa(long double d, int pr);
+char		*ft_itoa_lu(unsigned long int n);
+char		*ft_ftoa(double d, int pr);
+char		*ft_l_ftoa(long double d, int pr);
 char					*ft_strjoin_re(char *s1, char *s2);
 char				*ft_itoa_lu(unsigned long int n);
-void					ft_rounding(char *arr, int i);
+double					ft_sign(char *num, double d);
+int			ft_rounding(char *div, int i);
 #endif

@@ -1,12 +1,13 @@
 #include "includes/ft_printf.h"
-
+#include "float.h"
 int		main(void)
 {
 
 //	ft_printf("%+08.6f\n", 7.3);
 //	printf("%+08.6f", 7.3);
-	ft_printf("%+05.0f\n", -7.3);
-	printf("%+05.0f", -7.3);
+	ft_printf("%lu\n", -42);
+	printf("%lu", -42);
+//	printf("%+05.0f", -7.3);
 //	printf("%#.o\n", 42);
 //	ft_printf("%f", 234.34);
 //	ft_printf("%d\n", ft_printf("This is a float : %.3f\n", 45.236));
