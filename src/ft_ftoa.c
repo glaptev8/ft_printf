@@ -34,7 +34,7 @@ int					ft_rounding(char *div, int i)
 				div[i] = '0';
 				div[--i] += 1;
 			}
-			if (i == 0)
+			if (i == 0 && div[0] > '9')
 			{
 				div[i] = '0';
 				return (1);
@@ -61,8 +61,6 @@ int						ft_ftoa_div(double d, int pr, char *arr)
 		}
 		i++;
 	}
-	printf("%s div\n", arr);
-	printf("%d   i\n", i);
 	if (ft_rounding(arr, --i) == 1)
 	{
 		arr[pr - 1] = '\0';
@@ -72,6 +70,21 @@ int						ft_ftoa_div(double d, int pr, char *arr)
 	return (0);
 }
 
+double					ft_sign(char *num, double d)
+{
+	long unsigned int	tmp;
+
+	ft_memcpy(&tmp, &d, sizeof(double));
+	if (tmp & 1L << 63)
+	{
+		num[0] = '-';
+		return (-1.00);
+	}
+	else
+		num[0] = '+';
+	return (1.00);
+}
+
 char					*ft_ftoa(double d, int pr)
 {
 	char				*num;
@@ -79,15 +92,9 @@ char					*ft_ftoa(double d, int pr)
 	int					i;
 	char				*div;
 
-	if (!(num = ft_strnew(0)))
+	if (!(num = ft_strnew(1)))
 		return (NULL);
-	if (d < 0)
-	{
-		num = ft_strjoin("-", "\0");
-		d *= (-1);
-	}
-	else
-		num = ft_strjoin("+", "\0");
+	d *= ft_sign(num, d);
 	mod = (unsigned long int)d;
 	if (pr <= 0)
 	{

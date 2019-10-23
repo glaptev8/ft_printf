@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-char					ft_ftoa_div(long double d, int pr, char *arr)
+char					ft_l_ftoa_div(long double d, int pr, char *arr)
 {
 	int					i;
 
@@ -45,15 +45,9 @@ char					*ft_l_ftoa(long double d, int pr)
 	int					i;
 	char				*div;
 
-	if (!(num = ft_strnew(0)))
+	if (!(num = ft_strnew(1)))
 		return (NULL);
-	if (d < 0)
-	{
-		num = ft_strjoin("-", "\0");
-		d *= (-1);
-	}
-	else
-		num = ft_strjoin("+", "\0");
+	d *= ft_sign(num, d);
 	mod = (unsigned long int)d;
 	if (pr <= 0)
 	{
@@ -62,7 +56,7 @@ char					*ft_l_ftoa(long double d, int pr)
 	}
 	if (!(div = ft_strnew(++pr)))
 		return (num);
-	if (ft_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
+	if (ft_l_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
 		mod++;
 	num = ft_strjoin_re(num, ft_itoa_lu(mod));
 	return (ft_strjoin_re(num, div));

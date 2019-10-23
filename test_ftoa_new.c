@@ -13,13 +13,68 @@
 #include "includes/ft_printf.h"
 #include <stdio.h>
 
+void	ft_print_float(float f)
+{
+	unsigned int	i;
+	int				index;
+
+	i = 0;
+	index = 31;
+	memcpy(&i, &f, sizeof(float));
+	while (index >= 0)
+	{
+		if (index == 30 || index == 22)
+			write(1, ".", 1);
+		if (i & (1U << index))
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		index--;
+	}
+	write(1, "\n", 1);
+}
+
+void	ft_print_int(int f)
+{
+	unsigned int	i;
+	int				index;
+
+	i = 0;
+	index = 31;
+	memcpy(&i, &f, sizeof(float));
+	while (index >= 0)
+	{
+		if (!((index + 1)  % 8))
+			write(1, ".", 1);
+		if (i & (1U << index))
+			write(1, "1", 1);
+		else
+			write(1, "0", 1);
+		index--;
+	}
+	write(1, "\n", 1);
+}
+
 int		main(void)
 {
 	float	f;
+	double	d;
 
-	f = 1.00000;
-
-	printf("%.5f\n", f);
-	printf("%s\n", ft_ftoa(f, 5));
+	f = 0.000;
+	d = -0.0000;
+	printf("%.0f\n", f);
+	printf("%.0lf\n", d);
+/*
+	ft_print_float((float)d);
+	f = (float)d;
+	ft_print_float(f);
+	unsigned int			num;
+	ft_memcpy(&num, &f, 4);
+	ft_print_int(num);
+	ft_print_int(1L << 31);
+	if (num & 1L << 31)
+		printf("yes\n");*/
+	printf("%s\n", ft_ftoa(f, 0));
+	printf("%s\n", ft_l_ftoa(d, 0));
 	return (0);
 }
