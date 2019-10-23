@@ -5,8 +5,13 @@ int		main(void)
 
 //	ft_printf("%+08.6f\n", 7.3);
 //	printf("%+08.6f", 7.3);
-	ft_printf("%lu\n", -42);
-	printf("%lu", -42);
+//printf("%#-7o1\n", 33);
+printf("%#08.5o1\n", 34);
+//ft_printf("%#-7o1\n", 33);
+ft_printf("%#08.5o1\n", 34);
+//	     ("%#08.5o", 34)
+//	ft_printf("%lo, %lo\n", 0ul, ULONG_MAX);
+//	printf("%lo, %lo", 0ul, ULONG_MAX);
 //	printf("%+05.0f", -7.3);
 //	printf("%#.o\n", 42);
 //	ft_printf("%f", 234.34);

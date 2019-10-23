@@ -24,7 +24,12 @@ int			ft_add_flags(t_printf *list, int *flag)
 	while ((is_conversion(*list) == -1) && (list->format[list->i] != '\0'))
 	{
 		if ((j = is_flag(*list)) != -1)
+		{
+			if (list->format[list->i + 1] == 'l' ||
+			 list->format[list->i + 1] == 'h')
+				list->i++;
 			list->add_functions[j](list);
+		}
 		else if (ft_isalpha(list->format[list->i]))
 			break ;
 		list->i++;

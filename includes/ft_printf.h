@@ -13,6 +13,7 @@ typedef struct 	s_printf
 	uintmax_t	number_x;
 	int			is_number;
 	char		*format;
+	int			is_sharp;
 	void		(*add_functions[12])(struct s_printf *);
 	void		(*display[11])(struct s_printf *);
 	short		zero;

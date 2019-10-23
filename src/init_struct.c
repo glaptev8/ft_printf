@@ -30,6 +30,7 @@ void	init_struct(t_printf *l)
 	l->width_space = 0;
 	l->precision_space = -1;
 	l->zero_decimal = 0;
+	l->is_sharp = 0;
 	init_strcut2(l);
 }
 
