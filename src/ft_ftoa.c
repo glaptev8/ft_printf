@@ -24,24 +24,22 @@ char					*ft_strjoin_re(char *s1, char *s2)
 
 int					ft_rounding(char *div, int i)
 {
-	while (div[i] >= '5' && i > 0)
+	if (div[i] >= '5')
 	{
-		div[i] = '0';
 		div[--i] += 1;
-		if (div[i]  > '9')
+		if (div[i] > '9')
 		{
-			div[i] = '0';
-			div[i - 1] += 1;
-			printf("%s\n", div);
-			if (div[i - 1] > '9')
+			while (div[i] > '9' && i > 0)
 			{
-				div[i - 1] = '0';
+				div[i] = '0';
+				div[--i] += 1;
+			}
+			if (i == 0)
+			{
+				div[i] = '0';
 				return (1);
 			}
-			i--;
 		}
-		else
-			break;
 	}
 	return (0);
 }
@@ -63,6 +61,8 @@ int						ft_ftoa_div(double d, int pr, char *arr)
 		}
 		i++;
 	}
+	printf("%s div\n", arr);
+	printf("%d   i\n", i);
 	if (ft_rounding(arr, --i) == 1)
 	{
 		arr[pr - 1] = '\0';
@@ -98,5 +98,6 @@ char					*ft_ftoa(double d, int pr)
 		return (num);
 	if (ft_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
 		mod++;
-	return (num = ft_strjoin_re(ft_itoa_lu(mod), div));
+	num = ft_strjoin_re(num, ft_itoa_lu(mod));
+	return (ft_strjoin_re(num, div));
 }

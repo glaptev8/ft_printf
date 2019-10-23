@@ -64,5 +64,6 @@ char					*ft_l_ftoa(long double d, int pr)
 		return (num);
 	if (ft_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
 		mod++;
-	return (num = ft_strjoin_re(ft_itoa_lu(mod), div));
+	num = ft_strjoin_re(num, ft_itoa_lu(mod));
+	return (ft_strjoin_re(num, div));
 }
