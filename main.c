@@ -7,8 +7,10 @@ int		main(void)
 //	printf("%+08.6f", 7.3);
 //printf("%#-7o1\n", 33);
 
-	   printf("%#lx\n", 22337203685477lu);
-	ft_printf("%#lx\n", 22337203685477lu);
+	   printf("(norme -- {%05.*d})\n", -15, 42);
+	ft_printf("(my --    {%05.*d})\n", -15, 42);
+	   printf("(my --    {%03.2d})\n", 0);
+	ft_printf("(my --    {%03.2d})\n", 0);
 
 //ft_printf("%#-7o1\n", 33);
 //ft_printf("%%x ·· == |%x|", '····');

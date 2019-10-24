@@ -20,7 +20,7 @@ int		initialze_display_d(t_printf *list, intmax_t *n, int *len_num)
 	list->number = *n;
 	len = get_number_len(*n, *list);
 	*len_num = len;
-	if (list->precision == 1 || list->minus == 1)
+	if (list->minus == 1|| (list->precision == 1 && list->precision_space > 0))
 	{
 		if (list->zero == 1)
 			list->width = 1;
