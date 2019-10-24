@@ -45,10 +45,10 @@ void	display_x(t_printf *list)
 		display_zero_o(list, &len);
 	else if (list->width == 1)
 		display_width_o(list, len);
-	if (list->precision == 1)
-		display_precision_o(list, len_num);
 	if (list->sharp == 1)
 		display_sharp_o(list, &len);
+	if (list->precision == 1)
+		display_precision_o(list, len_num);
 	if (list->minus == 1)
 		display_minus_x(list, len, len_num, n);
 	else if (!(list->precision_space <= 0 &&

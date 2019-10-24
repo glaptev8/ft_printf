@@ -15,11 +15,22 @@
 void	display_zero_o(t_printf *list, int *len)
 {
 	int		i;
+	int		len_num;
 
+	len_num = *len;
+
+	if (list->precision == 1 && list->sharp == 1)
+		len_num++;
+	if ((list->is_0x == 1 || list->is_o == 1) && list->sharp == 1)
+	{
+		display_sharp_o(list, len);
+		list->sharp = 0;
+	}
 	i = list->width_space;
-//	if (list->sharp == 1)
-//		display_sharp_o(list, len);
-	while (i-- > *len)
+	if (list->precision == 0 && list->sharp == 0 && list->zero == 1 && \
+				list->number_o == 0)
+		len_num = 1;
+	while (i-- > len_num)
 	{
 		list->count++;
 		ft_putchar('0');
@@ -30,9 +41,11 @@ void	display_width_o(t_printf *list, int len)
 {
 	int		i;
 
-	if (list->sharp == 1 && list->is_o)
-		len--;
 	i = list->width_space;
+	if (list->sharp == 1 && list->is_o && list->number_o == 0)
+		len-- ;
+	else if (list->sharp == 1 && list->is_0x  && list->number_o == 0)
+		len -= 2;
 	while (i-- > len)
 	{
 		list->count++;
@@ -42,13 +55,7 @@ void	display_width_o(t_printf *list, int len)
 
 void	display_sharp_o(t_printf *list, int *len)
 {
-	if (list->is_o)
-	{
-		list->count++;
-		(*len)--;
-		ft_putchar('0');
-	}
-	else if (list->is_0x)
+	if (list->is_0x)
 	{
 		if (list->number_o == 0)
 			*len -= 2;
@@ -58,7 +65,6 @@ void	display_sharp_o(t_printf *list, int *len)
 			list->X == 1 ? ft_putstr("0X") : ft_putstr("0x");
 		}
 	}
-	list->sharp = 0;
 }
 
 void	display_precision_o(t_printf *list, int len_num)
@@ -66,7 +72,11 @@ void	display_precision_o(t_printf *list, int len_num)
 	int i;
 
 	i = 0;
-	while (len_num < list->precision_space - i++)
+	if (list->precision == 1 && list->sharp == 1)
+		len_num++;
+	if (list->sharp == 1 && list->is_0x)
+		i = -1;
+	while (i++ < list->precision_space - len_num)
 	{
 		list->count++;
 		ft_putchar('0');

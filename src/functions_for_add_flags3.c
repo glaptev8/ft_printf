@@ -15,7 +15,6 @@
 void	add_sharp(t_printf *list)
 {
 	list->sharp = 1;
-	list->is_sharp = 1;
 }
 
 void	add_minus(t_printf *list)

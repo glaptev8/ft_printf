@@ -28,7 +28,7 @@ void			ft_putstr_cool(char *str, long int len, t_printf *list)
 		}
 		else
 		{
-			while (len-- > 0)
+			while (len-- > 0 && *str)
 			{
 				write(1, str++, 1);
 				list->count++;
@@ -48,7 +48,7 @@ void			display_s(t_printf *list)
 	if (str)
 		len = ft_strlen(str);
 	if (list->precision > 0 && list->precision_space < len)
-		len = (list->precision_space >= 0) ? list->precision_space : 0;
+		len = (list->precision_space >= 0) ? list->precision_space : len;
 	if (list->minus == 1)
 	{
 		ft_putstr_cool(str, len, list);

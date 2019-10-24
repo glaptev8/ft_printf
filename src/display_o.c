@@ -30,28 +30,72 @@ uintmax_t	get_number_for_o(t_printf *list)
 	return (n);
 }
 
-void		display_o(t_printf *list)
+char		*ft_number_o(t_printf *list, size_t *lenght)
 {
-	uintmax_t	n;
-	int			len;
-	int			i;
-	int			len_num;
+	char		*num;
+	char		*zero;
+	size_t		len;
+	size_t		len_zero;
 
-	len = initialze_display_o(list, &n, &len_num);
-	if (list->space == 1)
-		display_space_o(list, &len);
-	if (list->zero == 1)
-		display_zero_o(list, &len);
-	else if (list->width == 1)
-		display_width_o(list, len);
-	if (list->sharp == 1)
-		display_sharp_o(list, &len);
-	if (list->precision == 1)
-		display_precision_o(list, len_num);
-	if (list->minus == 1)
-		display_minus_o(list, len);
-	else if (!(list->precision_space <= 0 && n == 0))
-		ft_putnbrmax_o(n, list);
-	else if (list->sharp != 1 && n == 0 && list->precision != 1)
-		ft_putnbrmax_o(n, list);
+	len_zero = 0;
+	if (!(num = ft_itoa_lu(get_number_for_o(list), 8, 'n')))
+		return (NULL);
+	if (num[0] == '0' && list->precision == 1 && list->precision_space <= 0)
+		num[0] = '\0';
+	len = ft_strlen(num);
+	if (list->sharp == 1 && num[0] != '0')
+		len_zero++;
+	if (list->precision == 1 && list->precision_space > (len + len_zero) && \
+		list->precision_space > 0)
+		len_zero += list->precision_space - len - len_zero;
+	if (len_zero > 0)
+	{
+		if (!(zero = ft_strnew(len_zero)))
+			return (NULL);
+		ft_memset(zero, '0', len_zero);
+		if (!(num = ft_strjoin_re(zero, num)))
+			return (NULL);
+	}
+	*lenght = len + len_zero;
+	return (num);
 }
+
+void			display_o(t_printf *list)
+{
+	char		*num;
+	size_t		len;
+
+	if (!(num = ft_number_o(list, &len)))
+		return;
+		if (list->minus == 1)
+	{
+		ft_putstr_cool(num, len, list);
+		ft_putstr_cool(" ", list->width_space - len, list);
+	}
+	else if (list->zero == 1 && list->precision != 1)
+	{
+		ft_putstr_cool("0", list->width_space - len, list);
+		ft_putstr_cool(num, len, list);
+	}
+	else
+	{
+		ft_putstr_cool(" ", list->width_space - len, list);
+		ft_putstr_cool(num, len, list);
+	}
+	ft_strdel(&num);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

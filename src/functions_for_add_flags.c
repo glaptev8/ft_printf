@@ -62,7 +62,7 @@ void	add_width(t_printf *list)
 		{
 			list->width = 0;
 			list->minus = 1;
-			list->minus_space = list->width_space * (-1);
+			list->width_space = list->width_space * (-1);
 		}
 	}
 	else if (ft_isdigit(list->format[list->i]))

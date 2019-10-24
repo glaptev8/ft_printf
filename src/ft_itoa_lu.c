@@ -12,38 +12,38 @@
 
 #include "../includes/ft_printf.h"
 
-static int		count_int(unsigned long int n)
+static int		count_int(unsigned long int n, unsigned int base)
 {
 	int i;
 
 	i = 1;
-	while (n / 10 != 0)
+	while (n / base != 0)
 	{
-		n /= 10;
+		n /= base;
 		i++;
 	}
 	return (i);
 }
 
-char				*ft_itoa_lu(unsigned long int n)
+char				*ft_itoa_lu(unsigned long int n, unsigned int base, char s)
 {
 	char				*str;
 	int					size;
 	unsigned long int	nb;
 	int					index;
 
-	size = count_int(n);
+	size = count_int(n, base);
 	if (!(str = ft_strnew(size + 1)))
 		return (NULL);
 	nb = n;
 	index = size - 1;
-	while (nb >= 10)
+	while (nb >= base)
 	{
-		str[index--] = nb % 10 + '0';
-		nb /= 10;
+		str[index--] = nb % base + '0';
+		nb /= base;
 	}
 	str[index] = nb + '0';
-	str[size] = '.';
+	str[size] = (s == 'f') ? '.' : '\0';
 	str[size + 1] = '\0';
 	return (str);
 }

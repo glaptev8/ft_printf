@@ -60,7 +60,7 @@ void	ft_putnbrmax_for_f(int i, int d, t_printf *l, int len_num)
 
 int		ft_str_equally(char *str1, char *str2)
 {
-	while (*str1 != '\0' && *str2 != '\0')
+	while (*str1 != '\0' || *str2 != '\0')
 	{
 		if (*str1 == *str2)
 		{

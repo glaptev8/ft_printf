@@ -6,9 +6,12 @@ int		main(void)
 //	ft_printf("%+08.6f\n", 7.3);
 //	printf("%+08.6f", 7.3);
 //printf("%#-7o1\n", 33);
-printf("%#08.5o1\n", 34);
+
+	   printf("%#lx\n", 22337203685477lu);
+	ft_printf("%#lx\n", 22337203685477lu);
+
 //ft_printf("%#-7o1\n", 33);
-ft_printf("%#08.5o1\n", 34);
+//ft_printf("%%x ·· == |%x|", '····');
 //	     ("%#08.5o", 34)
 //	ft_printf("%lo, %lo\n", 0ul, ULONG_MAX);
 //	printf("%lo, %lo", 0ul, ULONG_MAX);
