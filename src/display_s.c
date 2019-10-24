@@ -28,7 +28,7 @@ void			ft_putstr_cool(char *str, long int len, t_printf *list)
 		}
 		else
 		{
-			while (len-- > 0)
+			while (len-- > 0 && *str)
 			{
 				write(1, str++, 1);
 				list->count++;

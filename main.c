@@ -1,17 +1,21 @@
 #include "includes/ft_printf.h"
+#include <stdio.h>
 
 int			main(void)
 {
-	long unsigned int	i;
-	long unsigned int	a;
-	char				*c;
-	char				b;
 
-	b = 100;
-	c = &b;
-	printf("{%*d}\n", -5, 42);
-	ft_printf("{%*d}\n", -5, 42);
-	a = 100;
+	printf("%d = norm \n", printf("%lu\n", -42));
+	printf("%d = norm \n", ft_printf("%lu\n", -42);
+	//	long unsigned int	i;
+//	long unsigned int	a;
+//	char				*c;
+//	char				b;
+//
+//	b = 100;
+//	c = &b;
+//	printf("{%*d}\n", -5, 42);
+//	ft_printf("{%*d}\n", -5, 42);
+//	a = 100;
 //	i = (long unsigned int)c;
 //	ft_printf("%\n", "test");
 //	printf("%.30p__i\n", i);

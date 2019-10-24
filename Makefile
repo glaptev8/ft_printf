@@ -20,14 +20,24 @@ CFILE = display_procent.c \
 		display_s.c \
 		display_u.c \
 		display_x.c \
-		display_x^.c \
+		display_xx.c \
 		ft_printf.c \
 		functions_for_add_flags.c \
 		functions_for_add_flags2.c \
-		init_struct.c is_conversion.c \
+		functions_for_add_flags3.c \
+		init_struct.c \
+		is_conversion.c \
+		ft_putnbrmax.c \
+		ft_numberlen.c \
+		init_displays.c \
+		displays_for_d.c \
+		converter.c \
+		displays_for_u.c \
+		displays_for_o.c \
+		displays_for_space.c \
 		ft_ftoa.c \
-		ft_l_ftoa.c \
-		ft_itoa_lu.c
+		ft_itoa_lu.c \
+		ft_l_ftoa.c
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

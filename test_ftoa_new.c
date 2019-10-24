@@ -60,10 +60,10 @@ int		main(void)
 	float	f;
 	double	d;
 
-	f = 0.000;
-	d = -0.0000;
-	printf("%.0f\n", f);
-	printf("%.0lf\n", d);
+	f = 0.87650894255;
+	d = -1.0000;
+	printf("%.4f\n", 0.33);
+//	printf("%.0lf\n", d);
 /*
 	ft_print_float((float)d);
 	f = (float)d;
@@ -74,7 +74,7 @@ int		main(void)
 	ft_print_int(1L << 31);
 	if (num & 1L << 31)
 		printf("yes\n");*/
-	printf("%s\n", ft_ftoa(f, 0));
-	printf("%s\n", ft_l_ftoa(d, 0));
+	printf("%s\n", ft_l_ftoa(0.33, ));
+//	printf("%s\n", ft_l_ftoa(d, 0));
 	return (0);
 }
