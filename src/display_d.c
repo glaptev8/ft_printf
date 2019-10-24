@@ -40,7 +40,7 @@ void		display_d(t_printf *list)
 	len = initialze_display_d(list, &n, &len_num);
 	if (list->space == 1 && list->plus != 1 && list->number >= 0)
 		display_space_d(list, &len);
-	if (list->zero == 1)
+	if (list->zero == 1 && list->precision != 1)
 		display_zero_d(list, &len, &n);
 	else if (list->width == 1)
 		display_width_d(list, len);

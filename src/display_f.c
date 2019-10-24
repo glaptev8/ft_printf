@@ -78,6 +78,7 @@ void	display_f(t_printf *list)
 	int		len;
 	char	*str;
 
+
 	if (list->fl)
 		n = va_arg(list->argc, long double);
 	else

@@ -21,20 +21,26 @@ int			ft_add_flags(t_printf *list, int *flag)
 		list->i++;
 	else
 		return (0);
-	while ((is_conversion(*list) == -1) && (list->format[list->i] != '\0'))
+	while ((is_conversion(*list) == -1 || *flag == 1) && (list->format[list->i] != '\0'))
 	{
-		if ((j = is_flag(*list)) != -1)
+		if ((j = is_flag(*list)) != -1 && *flag == 0)
 		{
 			if (list->format[list->i + 1] == 'l' ||
 			list->format[list->i + 1] == 'h')
 				list->i++;
 			list->add_functions[j](list);
 		}
-		else if (ft_isalpha(list->format[list->i]))
-			break ;
+		else if (list->format[list->i] == '%')
+			*flag = 0;
+		else
+		{
+			list->count++;
+			ft_putchar(list->format[list->i]);
+			*flag = 1;
+		}
 		list->i++;
 	}
-	if ((j = is_conversion(*list)) > -1 && *flag == 0)
+	if ((j = is_conversion(*list)) > -1)
 		list->display[j](list);
 	else
 		*flag = 1;
@@ -56,6 +62,7 @@ int			ft_printf(const char *format, ...)
 	list.count = 0;
 	while (list.format[list.i] != '\0')
 	{
+		flag = 0;
 		if (list.format[list.i] == '%')
 			ft_add_flags(&list, &flag);
 		else
@@ -63,7 +70,8 @@ int			ft_printf(const char *format, ...)
 			list.count++;
 			ft_putchar(list.format[list.i]);
 		}
-		list.i++;
+		if (list.format[list.i] != '\0')
+			list.i++;
 	}
 	return (list.count);
 }
