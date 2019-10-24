@@ -28,7 +28,7 @@ void	init_struct(t_printf *l)
 	l->zero_space = 0;
 	l->minus_space = 0;
 	l->width_space = 0;
-	l->precision_space = -1;
+	l->precision_space = 0;
 	l->zero_decimal = 0;
 	init_strcut2(l);
 }
