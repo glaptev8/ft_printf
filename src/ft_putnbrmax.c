@@ -93,7 +93,7 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 		{
 			if (l->precision_space > 0 || l->precision == 0 ||
 					(l->precision == 1 && l->precision_space < 0 &&
-					l->number_o != 0) )
+					l->number_o != 0))
 			{
 				l->count++;
 				ft_putchar((n % 10) + '0');

@@ -42,10 +42,10 @@ void	init_strcut2(t_printf *l)
 	l->is_o = 0;
 	l->is_0x = 0;
 	l->number_o = 0;
-	l->X = 0;
+	l->xx = 0;
 	l->u = 0;
 	l->floatminus = 0;
-	l->L = 0;
+	l->fl = 0;
 }
 
 void	init_struct_functions(t_printf *l)

@@ -26,7 +26,7 @@ int			ft_add_flags(t_printf *list, int *flag)
 		if ((j = is_flag(*list)) != -1)
 		{
 			if (list->format[list->i + 1] == 'l' ||
-			 list->format[list->i + 1] == 'h')
+			list->format[list->i + 1] == 'h')
 				list->i++;
 			list->add_functions[j](list);
 		}

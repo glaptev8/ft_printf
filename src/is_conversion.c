@@ -77,7 +77,7 @@ int		get_zero_decimal(char *s)
 				i++;
 				count++;
 			}
-			break;
+			break ;
 		}
 		i++;
 	}

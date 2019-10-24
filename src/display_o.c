@@ -43,9 +43,8 @@ char		*ft_number_o(t_printf *list, size_t *lenght)
 	if (num[0] == '0' && list->precision == 1 && list->precision_space <= 0)
 		num[0] = '\0';
 	len = ft_strlen(num);
-	if (list->sharp == 1 && num[0] != '0')
-		len_zero++;
-	if (list->precision == 1 && list->precision_space > (len + len_zero) && \
+	(list->sharp == 1 && num[0] != '0') ? len_zero++ : 0;
+	if (list->precision == 1 && list->precision_space > (len + len_zero) &&
 		list->precision_space > 0)
 		len_zero += list->precision_space - len - len_zero;
 	if (len_zero > 0)
@@ -60,14 +59,14 @@ char		*ft_number_o(t_printf *list, size_t *lenght)
 	return (num);
 }
 
-void			display_o(t_printf *list)
+void		display_o(t_printf *list)
 {
 	char		*num;
 	size_t		len;
 
 	if (!(num = ft_number_o(list, &len)))
-		return;
-		if (list->minus == 1)
+		return ;
+	if (list->minus == 1)
 	{
 		ft_putstr_cool(num, len, list);
 		ft_putstr_cool(" ", list->width_space - len, list);
@@ -84,18 +83,3 @@ void			display_o(t_printf *list)
 	}
 	ft_strdel(&num);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
