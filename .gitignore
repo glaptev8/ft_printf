@@ -1,7 +1,7 @@
 obj/*
 /obj/
 pft/
-./a.out
+a.*
 ./libftprintf.a
 libft
 ./cmake-build-debug/
@@ -10,3 +10,5 @@ libft
 pft/
 main.c
 libftprintf.a
+pft/
+pft/

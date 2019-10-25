@@ -45,12 +45,12 @@ OFILE =		$(CFILE:%.c=%.o)
 
 OBJ =		$(addprefix $(OBJ_DIR), $(OFILE))
 
-all: $(OBJ_DIR) $(NAME)
+all: $(NAME)
 
 $(OBJ_DIR):
 		@mkdir -p $(OBJ_DIR)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ_DIR) $(OBJ)
 		@make -C $(LIB_DIR)
 		@cp $(LIB_DIR)$(LIBFT_A) .
 		@mv $(LIBFT_A) $(NAME)

@@ -12,6 +12,28 @@
 
 #include "../includes/ft_printf.h"
 
+void		ft_add(t_printf *list, int *flag)
+{
+	int j;
+
+	if ((j = is_flag(*list)) != -1 && *flag == 0)
+	{
+		if (list->format[list->i + 1] == 'l' ||
+			list->format[list->i + 1] == 'h')
+			list->i++;
+		list->add_functions[j](list);
+	}
+	else if (list->format[list->i] == '%')
+		*flag = 0;
+	else
+	{
+		list->count++;
+		ft_putchar(list->format[list->i]);
+		*flag = 1;
+	}
+	list->i++;
+}
+
 int			ft_add_flags(t_printf *list, int *flag)
 {
 	int j;
@@ -22,24 +44,7 @@ int			ft_add_flags(t_printf *list, int *flag)
 	else
 		return (0);
 	while ((is_conversion(*list) == -1 || *flag == 1) && (list->format[list->i] != '\0'))
-	{
-		if ((j = is_flag(*list)) != -1 && *flag == 0)
-		{
-			if (list->format[list->i + 1] == 'l' ||
-			list->format[list->i + 1] == 'h')
-				list->i++;
-			list->add_functions[j](list);
-		}
-		else if (list->format[list->i] == '%')
-			*flag = 0;
-		else
-		{
-			list->count++;
-			ft_putchar(list->format[list->i]);
-			*flag = 1;
-		}
-		list->i++;
-	}
+		ft_add(list, flag);
 	if ((j = is_conversion(*list)) > -1)
 		list->display[j](list);
 	else
