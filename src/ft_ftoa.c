@@ -17,8 +17,8 @@ char					*ft_strjoin_re(char *s1, char *s2)
 	char				*tmp;
 
 	tmp = ft_strjoin(s1, s2);
-	ft_strdel(&s1);
-	ft_strdel(&s2);
+	free(s1);
+	free(s2);
 	return (tmp);
 }
 
@@ -73,7 +73,6 @@ int						ft_ftoa_div(double d, int pr, char *arr)
 double					ft_sign(char *num, double d)
 {
 	long unsigned int	tmp;
-
 	ft_memcpy(&tmp, &d, sizeof(double));
 	if (tmp & 1L << 63)
 	{

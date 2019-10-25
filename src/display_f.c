@@ -73,10 +73,10 @@ void	display_f2(t_printf *list, int len, char *str)
 
 void	display_f(t_printf *list)
 {
-	double	n;
-	int		len_num;
-	int		len;
-	char	*str;
+	long double	n;
+	int			len_num;
+	int			len;
+	char		*str;
 
 
 	if (list->fl)

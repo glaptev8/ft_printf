@@ -129,7 +129,7 @@ void					display_minus_f(t_printf *list, int len, char *str);
 int						ft_pow(int n, int p);
 void					ft_putnbrmax_for_f(int i, int d,
 		t_printf *l, int len_num);
-int						initialze_display_f(t_printf *list, double n,
+int						initialze_display_f(t_printf *list, long double n,
 		int *len_num, char **str);
 void					display_space_d(t_printf *list, int *len);
 void					init_strcut2(t_printf *l);

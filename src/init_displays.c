@@ -37,16 +37,20 @@ int		initialze_display_d(t_printf *list, intmax_t *n, int *len_num)
 	return (len);
 }
 
-int		initialze_display_f(t_printf *list, double n, int *len_num, char **str)
+int		initialze_display_f(t_printf *list, long double n, int *len_num, char **str)
 {
 	int p;
 	int len;
 	int d_len;
+	int i;
 
+	i = 0;
 	(list->precision == 0) ? list->precision_space = 6 : 0;
 	(list->precision == 0) ? list->precision = 1 : 0;
-	*str = (list->fl == 1) ? ft_l_ftoa(n, list->precision_space) :
-			ft_ftoa(n, list->precision_space);
+//	if (list->fl == 1)
+//		*str = ft_l_ftoa((double)n, list->precision_space);
+//	else
+		*str = ft_l_ftoa(n, list->precision_space);
 	if (list->precision_space <= 0)
 		*ft_strchr(*str, '.') = '\0';
 	list->number = (*str[0] == '-') ? -1 : 1;
