@@ -61,7 +61,6 @@ void	display_f2(t_printf *list, int len, char *str)
 
 void	display_f(t_printf *list)
 {
-//	double	n;
 	int		len_num;
 	int		len;
 	char	*str;
@@ -79,5 +78,6 @@ void	display_f(t_printf *list)
 	else if (list->width == 1)
 		display_width_d(list, len);
 	display_f2(list, len, str);
-//	ft_strdel(str);
+	str--;
+	ft_strdel(&str);
 }

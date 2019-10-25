@@ -49,7 +49,7 @@ NAME = libft.a
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -I libft.h -c $(NAME_C)
+	gcc -Wall -Wextra -Werror -I./ -c $(NAME_C)
 	ar rc $(NAME) $(NAME_O)
 	ranlib $(NAME)
 
