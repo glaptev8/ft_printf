@@ -17,15 +17,15 @@ void	display_zero_d(t_printf *list, int *len, intmax_t *n)
 	int		i;
 
 	i = list->width_space;
+	if (*n < 0 || list->plus == 1)
+	{
+		list->count++;
+		list->number < 0 ? ft_putchar('-') : ft_putchar('+');
+		*n < 0 ? *n *= -1 : 0;
+		list->plus = 0;
+	}
 	while (i-- > *len)
 	{
-		if (*n < 0 || list->plus == 1)
-		{
-			list->count++;
-			list->number < 0 ? ft_putchar('-') : ft_putchar('+');
-			*n < 0 ? *n *= -1 : 0;
-			list->plus = 0;
-		}
 		list->count++;
 		ft_putchar('0');
 	}

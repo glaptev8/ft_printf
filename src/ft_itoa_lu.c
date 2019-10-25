@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-static int		count_int(unsigned long int n, unsigned int base)
+static int			count_int(unsigned long int n, unsigned int base)
 {
 	int i;
 

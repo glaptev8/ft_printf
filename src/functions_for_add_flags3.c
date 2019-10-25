@@ -15,6 +15,9 @@
 void	add_sharp(t_printf *list)
 {
 	list->sharp = 1;
+	while (list->format[list->i] == '#')
+		list->i++;
+	list->i--;
 }
 
 void	add_minus(t_printf *list)

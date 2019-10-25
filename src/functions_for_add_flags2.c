@@ -25,7 +25,7 @@ void	add_h(t_printf *list)
 void	add_ll(t_printf *list)
 {
 	list->ll = 1;
-	list->L = 1;
+	list->fl = 1;
 }
 
 void	add_hh(t_printf *list)

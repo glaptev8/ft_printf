@@ -73,5 +73,5 @@ void					display_p(t_printf *list)
 	if (list->precision_space < len)
 		list->precision_space = len;
 	ft_print_p(str_a, len, list);
-	free(str_a);
+	ft_strdel(&str_a);
 }

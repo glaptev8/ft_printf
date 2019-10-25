@@ -60,7 +60,7 @@ void	ft_putnbrmax_for_f(int i, int d, t_printf *l, int len_num)
 
 int		ft_str_equally(char *str1, char *str2)
 {
-	while (*str1 != '\0' && *str2 != '\0')
+	while (*str1 != '\0' || *str2 != '\0')
 	{
 		if (*str1 == *str2)
 		{
@@ -93,7 +93,7 @@ void	ft_putnbrmax_o(uintmax_t n, t_printf *l)
 		{
 			if (l->precision_space > 0 || l->precision == 0 ||
 					(l->precision == 1 && l->precision_space < 0 &&
-					l->number_o != 0) )
+					l->number_o != 0))
 			{
 				l->count++;
 				ft_putchar((n % 10) + '0');

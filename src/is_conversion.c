@@ -45,7 +45,7 @@ int		is_flag(t_printf list)
 	{
 		if (list.format[list.i] == flags[i])
 		{
-			if ((flags[i] == 'l' && list.format[list.i + 1] == 'l') &&
+			if ((flags[i] == 'l' && list.format[list.i + 1] == 'l') ||
 			(flags[i] == 'h' && list.format[list.i + 1] == 'h'))
 			{
 				free(flags);
@@ -77,7 +77,7 @@ int		get_zero_decimal(char *s)
 				i++;
 				count++;
 			}
-			break;
+			break ;
 		}
 		i++;
 	}

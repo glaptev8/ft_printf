@@ -48,7 +48,7 @@ void			display_s(t_printf *list)
 	if (str)
 		len = ft_strlen(str);
 	if (list->precision > 0 && list->precision_space < len)
-		len = (list->precision_space >= 0 ) ? list->precision_space : len;
+		len = (list->precision_space >= 0) ? list->precision_space : len;
 	if (list->minus == 1)
 	{
 		ft_putstr_cool(str, len, list);

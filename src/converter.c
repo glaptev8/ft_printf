@@ -43,7 +43,7 @@ char			*converter_16(uintmax_t n, t_printf *list)
 		str = ft_strnew(len);
 		while (n != 0)
 		{
-			str[--len] = list->X == 1 ? sym2[n % 16] : sym[n % 16];
+			str[--len] = list->xx == 1 ? sym2[n % 16] : sym[n % 16];
 			n /= 16;
 		}
 	}

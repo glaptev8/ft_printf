@@ -39,24 +39,8 @@ void	display_plus_f(t_printf *list)
 	list->number < 0 ? list->number *= (-1) : 0;
 }
 
-void	display_f(t_printf *list)
+void	display_f2(t_printf *list, int len, char *str)
 {
-	double n;
-	int len_num;
-	int	len;
-	char *str;
-
-	if (list->L)
-		n = va_arg(list->argc, long double);
-	else
-		n = va_arg(list->argc, double);
-	len = initialze_display_f(list, n, &len_num, &str);
-	if (list->space == 1 && list->plus != 1 && list->number >= 0)
-		display_space_d(list, &len);
-	if (list->zero == 1)
-		display_zero_d(list, &len, (intmax_t *)&(list->number));
-	else if (list->width == 1)
-		display_width_d(list, len);
 	if (list->plus == 1)
 		display_plus_f(list);
 	if (list->precision == 1)
@@ -73,4 +57,27 @@ void	display_f(t_printf *list)
 			ft_putchar('.');
 		}
 	}
+}
+
+void	display_f(t_printf *list)
+{
+//	double	n;
+	int		len_num;
+	int		len;
+	char	*str;
+
+
+	if (list->fl)
+		list->fll = va_arg(list->argc, long double);
+	else
+		list->f = va_arg(list->argc, double);
+	len = initialze_display_f(list, /*n,*/ &len_num, &str);
+	if (list->space == 1 && list->plus != 1 && list->number >= 0)
+		display_space_d(list, &len);
+	if (list->zero == 1)
+		display_zero_d(list, &len, (intmax_t *)&(list->number));
+	else if (list->width == 1)
+		display_width_d(list, len);
+	display_f2(list, len, str);
+//	ft_strdel(str);
 }

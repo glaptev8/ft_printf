@@ -16,12 +16,18 @@ void	add_plus(t_printf *list)
 {
 	list->space = 0;
 	list->plus = 1;
+	while (list->format[list->i] == '+')
+		list->i++;
+	list->i--;
 }
 
 void	add_space(t_printf *list)
 {
 	if (list->plus != 1)
 		list->space = 1;
+	while (list->format[list->i] == ' ')
+		list->i++;
+	list->i--;
 }
 
 void	add_precision(t_printf *list)
@@ -29,6 +35,7 @@ void	add_precision(t_printf *list)
 	char *num;
 
 	list->precision = 1;
+	list->precision_space = 0;
 	if (list->format[list->i + 1] == '*')
 	{
 		list->precision_space = va_arg(list->argc, int);
@@ -44,6 +51,8 @@ void	add_precision(t_printf *list)
 			list->i++;
 		list->i--;
 	}
+	if (list->precision_space < 0)
+		list->precision = 0;
 }
 
 void	add_width(t_printf *list)
@@ -83,7 +92,8 @@ void	add_zero(t_printf *list)
 		list->i++;
 		num = list->format;
 		num += list->i;
-		list->width_space = ft_atoi(num);
+		if (ft_atoi(num) != 0)
+			list->width_space = ft_atoi(num);
 		while (ft_isdigit(list->format[list->i]))
 			list->i++;
 		list->i--;

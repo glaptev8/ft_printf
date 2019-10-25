@@ -56,7 +56,7 @@ char					*ft_l_ftoa(long double d, int pr)
 	}
 	if (!(div = ft_strnew(++pr)))
 		return (num);
-	if (ft_l_ftoa_div(d - (unsigned long int) d, pr, div) == 1)
+	if (ft_l_ftoa_div(d - (unsigned long int)d, pr, div) == 1)
 		mod++;
 	num = ft_strjoin_re(num, ft_itoa_lu(mod, 10, 'f'));
 	return (ft_strjoin_re(num, div));
