@@ -55,7 +55,6 @@ int			ft_add_flags(t_printf *list, int *flag)
 int			ft_printf(const char *format, ...)
 {
 	t_printf	list;
-	int			j;
 	int			flag;
 
 	flag = 0;

@@ -23,8 +23,6 @@ void	display_minus_f(t_printf *list, int len, char *str)
 
 void	display_precision_f(t_printf *list)
 {
-	int j;
-
 	if (list->number < 0)
 	{
 		list->count++;

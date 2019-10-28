@@ -84,7 +84,7 @@ void					print_memory(const void *addr, size_t size)
 		}
 		write(1, "\n", 1);
 	}
-}
+}*/
 void	ft_print_float(double f)
 {
 	unsigned long int	i;
@@ -106,6 +106,33 @@ void	ft_print_float(double f)
 	write(1, "\n", 1);
 }
 
+void		ft_print_long_double(double *f)
+{
+	char	*arr;
+	int		i;
+	int		j;
+
+	i = sizeof(double) - 1;
+//	ft_memcpy(arr, &f, sizeof(long double));
+	arr = (char *)f;
+	while (i >= 0)
+	{
+		j = 7;
+		while (j >= 0)
+		{
+			if (arr[i] & (1U << j))
+				write(1, "1", 1);
+			else
+				write(1 , "0", 1);
+			j--;
+		}
+		write(1, ".", 1);
+		i--;
+	}
+	write(1, "\n", 1);
+}
+
+/*
 void	ft_print_int(int f)
 {
 	unsigned int i;
@@ -145,13 +172,110 @@ unsigned long	divlu(unsigned long *x, unsigned long *y, unsigned long *z)
 	}
 	return (*y);
 }*/
+/*
+char	*ft_nan_inf(long double f)
+{
+
+}*/
+int			ft_exp_double(unsigned long int tmp)
+{
+	int		index;
+	int		exp;
+
+	exp = 0;
+	tmp >>= 52;
+	index = 10;
+	while (index >= 0)
+	{
+		if (tmp & 1L << index)
+			exp |= 1L << index;
+		index--;
+	}
+	return (exp);
+}
+
+void		ft_big_number(double f)
+{
+	unsigned long int	num_10[1000] = {0};
+	unsigned long int	tmp;
+	int					index;
+	int					exp;
+	int					next;
+
+	index = 63;
+	exp = 0;
+	next = 1;
+	ft_memcpy(&tmp, &f, sizeof(double));
+	exp = ft_exp_double(tmp) - 1023 -  52;
+	printf("%d bit\n", (exp + 52));
+	while (index >= 52)
+	{
+		if (tmp & 1L << index)
+			tmp ^= 1L << index;
+		index--;
+	}
+	tmp |= 1L << 52;
+	num_10[0] = tmp;
+	index = 0;
+	while (num_10[index] != 0)
+	{
+		num_10[index + 1] = num_10[index] / 10;
+		num_10[index] = num_10[index] % 10;
+		index++;
+	}
+	next = index - 1;
+//	while (index >= 0)
+//		printf("%lu   ", num_10[index--]);
+//	printf("\n");
+	while (exp > 0)
+	{
+		index = next;
+		while (index >= 0)
+			num_10[index--] <<= 1;
+		index++;
+		while (index <= next)
+		{
+			if (num_10[index] >= 10)
+			{
+				num_10[index] -= 10;
+				num_10[index + 1] += 1;
+			}
+			index++;
+		}
+		if (num_10[next] != 0)
+			next++;
+		exp--;
+	}
+	while (--next >= 0)
+		printf("%lu", num_10[next]);
+	printf("\n%d  dec number\n", index);
+}
 
 int			main(void)
 {
 //    printf("%.10Lf\n", 0.87650894255l);
 //    ft_printf("%.10Lf\n", 0.87650894255l);
-    printf("%.-1f\n", 256.00);
-    ft_printf("%.-1f\n", 256.0);
+	double *f;
+	unsigned int *num;
+
+	num = (unsigned int*)f;
+	num[0] = 0xffffffff;
+	num[1] = 0x7FEFFFFF;
+//	unsigned char	num[10] = {0};
+
+//	num[3]  = 127;
+//	num[2] = 128;
+//	num[1] = 1;
+//	ft_memcpy(&f, num, 4);
+//	char *s ="123456789";
+
+	ft_print_long_double(f);
+	ft_big_number(*f);
+	printf("%309.lf!\n", *f);
+
+	//	printf("%-41llf!\n", f);
+//	ft_print_float(f);
+//	ft_printf("%.-5s!\n", s);
 //
 //	printf("%.128f\n", FLT_MIN);
 //	ft_printf("%.128f\n", FLT_MIN);

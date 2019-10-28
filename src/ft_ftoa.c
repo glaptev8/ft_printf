@@ -43,7 +43,7 @@ int					ft_rounding(char *div, int i)
 	}
 	return (0);
 }
-
+/*
 int						ft_ftoa_div(double d, int pr, char *arr)
 {
 	int					i;
@@ -68,7 +68,7 @@ int						ft_ftoa_div(double d, int pr, char *arr)
 	}
 	arr[pr - 1] = '\0';
 	return (0);
-}
+}*/
 
 double					ft_sign(char *num, double d)
 {
@@ -84,7 +84,7 @@ double					ft_sign(char *num, double d)
 		num[0] = '+';
 	return (1.00);
 }
-
+/*
 char					*ft_ftoa(double d, int pr)
 {
 	char				*num;
@@ -107,4 +107,4 @@ char					*ft_ftoa(double d, int pr)
 		mod++;
 	num = ft_strjoin_re(num, ft_itoa_lu(mod, 10, 'f'));
 	return (ft_strjoin_re(num, div));
-}
+}*/

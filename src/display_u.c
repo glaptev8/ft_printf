@@ -16,7 +16,6 @@ void	display_u(t_printf *list)
 {
 	uintmax_t	n;
 	int			len;
-	int			i;
 	int			len_num;
 
 	len = initialze_display_u(list, &n, &len_num);
