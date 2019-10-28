@@ -44,35 +44,10 @@ int						ft_rounding(char *div, int i)
 	return (0);
 }
 
-int						ft_ftoa_div(double d, int pr, char *arr)
-{
-	int					i;
-
-	i = 0;
-	while (i < pr)
-	{
-		d *= 10.00;
-		if ((unsigned long int)d == 0)
-			arr[i] = '0';
-		else
-		{
-			arr[i] = (unsigned long int)d + '0';
-			d -= (unsigned long int)d;
-		}
-		i++;
-	}
-	if (ft_rounding(arr, --i) == 1)
-	{
-		arr[pr - 1] = '\0';
-		return (1);
-	}
-	arr[pr - 1] = '\0';
-	return (0);
-}
-
 double					ft_sign(char *num, double d)
 {
 	long unsigned int	tmp;
+
 	ft_memcpy(&tmp, &d, sizeof(double));
 	if (tmp & 1L << 63)
 	{
@@ -82,28 +57,4 @@ double					ft_sign(char *num, double d)
 	else
 		num[0] = '+';
 	return (1.00);
-}
-
-char					*ft_ftoa(double d, int pr)
-{
-	char				*num;
-	long unsigned int	mod;
-	int					i;
-	char				*div;
-
-	if (!(num = ft_strnew(1)))
-		return (NULL);
-	d *= ft_sign(num, d);
-	mod = (unsigned long int)d;
-	if (pr <= 0)
-	{
-		if ((unsigned long int)((d - (double)mod) * 1e1) >= 5)
-			return (ft_strjoin_re(num, ft_itoa_lu(++mod, 10, 'f')));
-	}
-	if (!(div = ft_strnew(++pr)))
-		return (num);
-	if (ft_ftoa_div(d - (unsigned long int)d, pr, div) == 1)
-		mod++;
-	num = ft_strjoin_re(num, ft_itoa_lu(mod, 10, 'f'));
-	return (ft_strjoin_re(num, div));
 }

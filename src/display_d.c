@@ -34,7 +34,6 @@ void		display_d(t_printf *list)
 {
 	intmax_t	n;
 	int			len;
-	int			i;
 	int			len_num;
 
 	len = initialze_display_d(list, &n, &len_num);

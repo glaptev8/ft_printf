@@ -17,7 +17,7 @@ uintmax_t		converter(uintmax_t n, int base)
 	uintmax_t nb;
 
 	nb = 0;
-	if (n >= base)
+	if (n >= (uintmax_t)base)
 		nb += converter(n / base, base);
 	nb = nb * 10 + n % base;
 	return (nb);

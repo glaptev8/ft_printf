@@ -105,19 +105,17 @@ void					ft_putnbrmax_o(uintmax_t n, t_printf *l);
 uintmax_t				converter(uintmax_t n, int base);
 char					*converter_16(uintmax_t n, t_printf *list);
 uintmax_t				get_number_for_o(t_printf *list);
-int						initialze_display_x(t_printf *list, char *n,
-		int *len_num);
+int						initialze_display_x(t_printf *list, int *len_num);
 int						get_number_len_for_16(uintmax_t n);
 void					display_sharp_o(t_printf *list, int *len);
 void					display_minus_x(t_printf *list, int len,
 		int len_num, char *n);
 void					ft_putnbrmax_x(char *n);
 void					display_minus_u(t_printf *list, uintmax_t n, int len);
-void					display_precision_u(t_printf *list, uintmax_t *n,
-		int len_num);
-void					display_plus_u(t_printf *list, uintmax_t *n);
+void					display_precision_u(t_printf *list, int len_num);
+void					display_plus_u(t_printf *list);
 void					display_width_u(t_printf *list, int len);
-void					display_zero_u(t_printf *list, int *len, uintmax_t *n);
+void					display_zero_u(t_printf *list, int *len);
 void					display_space_u(t_printf *list, int *len);
 int						get_number_len_for_uint(uintmax_t n);
 void					ft_putstr_cool(char *str, long int len, t_printf *list);

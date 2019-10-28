@@ -12,7 +12,7 @@
 
 #include "../includes/ft_printf.h"
 
-void	display_zero_u(t_printf *list, int *len, uintmax_t *n)
+void	display_zero_u(t_printf *list, int *len)
 {
 	int		i;
 
@@ -41,12 +41,12 @@ void	display_width_u(t_printf *list, int len)
 	}
 }
 
-void	display_plus_u(t_printf *list, uintmax_t *n)
+void	display_plus_u(t_printf *list)
 {
 	list->count++;
 }
 
-void	display_precision_u(t_printf *list, uintmax_t *n, int len_num)
+void	display_precision_u(t_printf *list, int len_num)
 {
 	int i;
 

@@ -43,7 +43,8 @@ int			ft_add_flags(t_printf *list, int *flag)
 		list->i++;
 	else
 		return (0);
-	while ((is_conversion(*list) == -1 || *flag == 1) && (list->format[list->i] != '\0'))
+	while ((is_conversion(*list) == -1 || *flag == 1)
+	&& (list->format[list->i] != '\0'))
 		ft_add(list, flag);
 	if ((j = is_conversion(*list)) > -1)
 		list->display[j](list);
@@ -55,7 +56,6 @@ int			ft_add_flags(t_printf *list, int *flag)
 int			ft_printf(const char *format, ...)
 {
 	t_printf	list;
-	int			j;
 	int			flag;
 
 	flag = 0;

@@ -35,8 +35,6 @@ void	display_minus_f(t_printf *list, int len, char *str)
 
 void	display_precision_f(t_printf *list)
 {
-	int j;
-
 	if (list->number < 0)
 	{
 		list->count++;
@@ -78,7 +76,6 @@ void	display_f(t_printf *list)
 	int			len;
 	char		*str;
 
-
 	if (list->fl)
 		n = va_arg(list->argc, long double);
 	else
@@ -91,4 +88,5 @@ void	display_f(t_printf *list)
 	else if (list->width == 1)
 		display_width_d(list, len);
 	display_f2(list, len, str);
+	ft_strdup(--str);
 }

@@ -44,8 +44,8 @@ char		*ft_number_o(t_printf *list, size_t *lenght)
 		num[0] = '\0';
 	len = ft_strlen(num);
 	(list->sharp == 1 && num[0] != '0') ? len_zero++ : 0;
-	if (list->precision == 1 && list->precision_space > (len + len_zero) &&
-		list->precision_space > 0)
+	if (list->precision == 1 && (unsigned int)list->precision_space >
+	(len + len_zero) && list->precision_space > 0)
 		len_zero += list->precision_space - len - len_zero;
 	if (len_zero > 0)
 	{

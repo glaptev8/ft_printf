@@ -19,7 +19,7 @@ char					ft_l_ftoa_div(long double d, int pr, char *arr)
 	i = 0;
 	while (i < pr)
 	{
-		d *= 10.00;
+		d *= 1e1;
 		if ((unsigned long int)d == 0)
 			arr[i] = '0';
 		else
@@ -42,7 +42,6 @@ char					*ft_l_ftoa(long double d, int pr)
 {
 	char				*num;
 	long unsigned int	mod;
-	int					i;
 	char				*div;
 
 	if (!(num = ft_strnew(1)))
