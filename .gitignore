@@ -1,0 +1,15 @@
+obj/*
+/obj/
+pft/
+a.*
+./libftprintf.a
+libft
+./cmake-build-debug/
+./cmake-build-debug/*
+./pft/
+pft/
+main.c
+libftprintf.a
+
+
+pft/
