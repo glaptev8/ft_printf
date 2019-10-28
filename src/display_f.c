@@ -88,5 +88,5 @@ void	display_f(t_printf *list)
 	else if (list->width == 1)
 		display_width_d(list, len);
 	display_f2(list, len, str);
-	ft_strdup(--str);
+	free(--str);
 }
