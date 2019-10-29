@@ -135,4 +135,5 @@ char					*ft_itoa_lu(unsigned long int n, unsigned int base,
 double					ft_sign(char *num, double d);
 int						ft_rounding(char *div, int i);
 void					display_f2(t_printf *list, int len, char *str);
+char					*ft_max_long_double(long double f);
 #endif

@@ -37,7 +37,8 @@ CFILE = display_procent.c \
 		displays_for_space.c \
 		ft_ftoa.c \
 		ft_itoa_lu.c \
-		ft_l_ftoa.c
+		ft_l_ftoa.c \
+		ft_max_long_double.c
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 
