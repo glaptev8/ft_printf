@@ -9,8 +9,9 @@
   - You must manage the precision</br>
 ### Compiling:</br>
 1.To compile</br>
-
    make</br>
+   
+   
 2. To remove objects:</br>
    make clean</br>
    
