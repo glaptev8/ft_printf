@@ -7,9 +7,10 @@
   - You must manage the flags #0-+ and space</br>
   - You must manage the minimum field-width</br>
   - You must manage the precision</br>
-###Compiling:</br>
+### Compiling:</br>
 1.To compile</br>
-   make</br>
+
+make</br>
 2. To remove objects:</br>
 
    make clean</br>
