@@ -12,11 +12,10 @@
 
 make</br>
 2. To remove objects:</br>
-
    make clean</br>
+   
 3. To remove objects and binary file (program):</br>
-
    make fclean</br>
+   
 4. To re-compile:</br>
-
    make re</br>
