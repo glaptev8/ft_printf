@@ -8,7 +8,8 @@
   - You must manage the minimum field-width</br>
   - You must manage the precision</br>
 ### Compiling:</br>
-1.To compile</br>
+
+1. To compile</br>
    make</br>
    
    
