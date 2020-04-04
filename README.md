@@ -1,5 +1,5 @@
 # ft_printf </br>
-###Mandatory part:
+### Mandatory part:
   *You have to manage the following conversions: csp
   *You have to manage the following conversions: diouxX with the following flags: hh, h, l and ll.
   *You have to manage the following conversion: f with the following flags: l and L.
