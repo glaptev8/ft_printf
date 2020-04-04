@@ -1,7 +1,7 @@
 # ft_printf </br>
 ### Mandatory part: </br>
-  -You have to manage the following conversions: csp </br>
-  -You have to manage the following conversions: diouxX with the following flags: hh, h, l and ll. </br>
+  - You have to manage the following conversions: csp </br>
+  - You have to manage the following conversions: diouxX with the following flags: hh, h, l and ll. </br>
   -You have to manage the following conversion: f with the following flags: l and L. </br>
   -You must manage %% </br>
   -You must manage the flags #0-+ and space</br>
